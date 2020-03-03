@@ -18,7 +18,7 @@ export class Header extends React.Component {
       eltUsers: ["admin", "elt"],
       shtUsers: ["admin", "sht"],
       hrViewUsers: ["admin", "hr"],
-      csUsers:["admin","cs"],
+      csUsers: ["admin", "cs"],
       myResignations: ["admin", "manager"]
     };
   }
@@ -52,39 +52,6 @@ export class Header extends React.Component {
           )}
           {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
             <Nav.Link href="/upload_users">Upload Users</Nav.Link>
-          )}
-          {this.checkAuth(
-            this.state.resignReqUsers,
-            this.props.account.roles
-          ) && <Nav.Link href="/resign">Resignation Request</Nav.Link>}
-          {this.checkAuth(this.state.smcUsers, this.props.account.roles) && (
-            <Nav.Link href="/smc">SMC</Nav.Link>
-          )}
-          {this.checkAuth(this.state.wfUsers, this.props.account.roles) && (
-            <Nav.Link href="/wf-view">Work Force</Nav.Link>
-          )}
-          {this.checkAuth(
-            this.state.ccConsumerUsers,
-            this.props.account.roles
-          ) && (
-            <Nav.Link href="/cc-consumer-activation-table">
-              CC Consumer Activation
-            </Nav.Link>
-          )}
-          {this.checkAuth(this.state.astUsers, this.props.account.roles) && (
-            <Nav.Link href="/ast">Application Security</Nav.Link>
-          )}
-          {this.checkAuth(this.state.astUsers, this.props.account.roles) && (
-            <Nav.Link href="/cs">Corporate Security</Nav.Link>
-          )}
-          {this.checkAuth(this.state.eltUsers, this.props.account.roles) && (
-            <Nav.Link href="/elt">Entrprise Logistics</Nav.Link>
-          )}
-          {this.checkAuth(this.state.shtUsers, this.props.account.roles) && (
-            <Nav.Link href="/sht">Security Hardware Team</Nav.Link>
-          )}
-          {this.checkAuth(this.state.hrViewUsers, this.props.account.roles) && (
-            <Nav.Link href="/hr-view">Human Resources</Nav.Link>
           )}
         </Nav>
         <Nav className="justify-content-end" activeKey="/home">

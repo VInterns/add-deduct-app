@@ -1,14 +1,14 @@
 {
-  "name": "leaver-app",
+  "name": "add-deduct-app",
   "version": "1.0.0",
-  "description": "Leaver checklist Application",
+  "description": "Addition Dedudction Application",
   "main": "index.js",
   "author": "islam-gad2 <islam.gad2@vodafone.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\"",
-    "dev:client": "cd client && PORT=4200 yarn start",
+    "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\" -d",
+    "dev:client": "cd client && yarn start PORT=4200",
     "dev:server": "nodemon ./server/server.js",
     "start": "yarn start:server",
     "start:server": "node ./server/server.js",
