@@ -8,14 +8,15 @@
   "private": true,
   "scripts": {
     "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\" -d",
-    "dev:client": "cd client && yarn start PORT=4200",
+    "dev:client": "cd client && cross-env PORT=4200 yarn start",
     "dev:server": "nodemon ./server/server.js",
     "start": "yarn start:server",
     "start:server": "node ./server/server.js",
     "install:client": "cd client && yarn",
     "install:all": "yarn install:client && yarn",
     "build:client": "cd client && yarn build",
-    "post_build:copy": "cp -r './client/build/.' './server/static'"
+    "post_build:copy": "cp -r './client/build/.' './server/static'",
+    "mm": "mm"
   },
   "dependencies": {
     "@sendgrid/mail": "^6.5.3",
@@ -55,6 +56,7 @@
   },
   "devDependencies": {
     "concurrently": "^5.0.2",
+    "cross-env": "^7.0.1",
     "nodemon": "^2.0.2",
     "yarn": "^1.21.1"
   }
