@@ -16,7 +16,8 @@ import {
   UploadEmployeesScreen,
   UploadUsersScreen,
   RegistrationScreen,
-  AuthenticationScreen
+  AuthenticationScreen,
+  HrView
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -109,6 +110,12 @@ class App extends Component {
                   path="/upload_employees"
                   exact
                   component={UploadEmployeesScreen}
+                />
+                <ConnectedPrivateRoute
+                  allowed={["admin", "hr"]}
+                  path="/hr"
+                  exact
+                  component={HrView}
                 />
               </Switch>
             </Router>
