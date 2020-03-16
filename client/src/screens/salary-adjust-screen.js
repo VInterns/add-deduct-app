@@ -8,7 +8,7 @@ export class SalaryAdjustmentScreen extends React.Component {
 
     render() {
         return (
-            <Team teamName = 'Salary Adjustment Team'/>
+            <Team teamName = 'Salary Adjustment'/>
         );
     }
 } 
