@@ -4,3 +4,6 @@ export * from './private-route';
 export * from './image-uploader';
 export * from './leaver-detail';
 export * from './signup-form';
+export * from './upload-file';
+export * from './team';
+export * from './team-header';

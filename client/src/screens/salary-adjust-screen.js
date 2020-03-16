@@ -1,4 +1,5 @@
 import React from "react";
+import { Team } from "../components";
 
 export class SalaryAdjustmentScreen extends React.Component {
     constructor(props){
@@ -7,9 +8,7 @@ export class SalaryAdjustmentScreen extends React.Component {
 
     render() {
         return (
-            <div>
-                SalaryAdjustmentScreen
-            </div>
+            <Team teamName = 'Salary Adjustment Team'/>
         );
     }
 } 
