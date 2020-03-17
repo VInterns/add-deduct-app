@@ -2,11 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import {
     Container,
-    Divider,
 } from "semantic-ui-react";
 import {
-    UploadFile,
-    TeamHeader
+    TeamHeader,
+    TeamBody
 } from "../components";
 
 export class Team extends React.Component {
@@ -28,8 +27,9 @@ export class Team extends React.Component {
             <Container fluid className='bg-light p-5' style={{ height: '100vh' }}>
                 <div className='offset-md-3 col-md-6 border bg-white rounded p-5'>
                     <TeamHeader name={this.props.teamName} />
-                    <UploadFile name={this.props.teamName} />
-                    <Divider />
+                    <TeamBody
+                        team={this.props.teamName}
+                        file="samples-sa.xlsx" />
                 </div>
             </Container>
         );

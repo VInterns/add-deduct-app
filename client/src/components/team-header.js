@@ -8,6 +8,7 @@ export class TeamHeader extends React.Component {
     }
 
     render() {
+
         return (
             <div>
                 <Header as='h2' floated='left'>
@@ -20,5 +21,6 @@ export class TeamHeader extends React.Component {
 }
 
 TeamHeader.protoTypes = {
-    name: PropTypes.string.isRequired
+    name: PropTypes.string.isRequired,
+    filePath: PropTypes.string.isRequired
 }
