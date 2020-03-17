@@ -6,7 +6,7 @@ export class TeamBody extends React.Component {
 
     render() {
         return (
-            <div className="p-3">
+            <div>
                 <TeamBodyNotice teamName={this.props.team} fileName={this.props.file} />
                 <TeamBodyUpload />
             </div>

@@ -1,56 +1,40 @@
 import React from "react";
+import XLSX from "xlsx";
 import PropTypes from "prop-types";
-import { Upload } from "antd";
-import { Button, Icon } from "semantic-ui-react";
+import { message } from "antd";
 
 export class TeamBodyUpload extends React.Component {
 
-    constructor(props){
-        super(props);
-
-        this.state = {
-            errorMessage: null
+    checkFileType = (event) => {
+        let file = event.target.files[0];
+        let err = null;
+        // allowed file types [excel files]
+        const types = [
+            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        ];
+        if (types.every(type => file.type !== type)) {
+            err = file.type + " is not a supported format\n";
         }
+        if (err) {
+            message.error(err);
+            return false;
+        } else {
+            return true;
+        }
+
     }
 
-    fileHandler = (fileList) => {
-        console.log("fileList", fileList);
-        let fileObj = fileList;
-        if (!fileObj) {
-            this.setState({
-                errorMessage: "No file uploaded!"
-            });
-            return false;
-        }
-        console.log("fileObj.type:", fileObj.type);
-        if (
-            !(
-                fileObj.type === "application/vnd.ms-excel" ||
-                fileObj.type ===
-                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-            )
-        ) {
-            this.setState({
-                errorMessage: "Unknown file format. Only Excel files are uploaded!"
-            });
-            return false;
-        }
+    handleUpload(event) {
+        message.success(event.target.value)
     }
 
     render() {
         return (
-            <div className="row mt-3">
-                <Upload
-                    name="file"
-                    beforeUpload={this.fileHandler}
-                    onRemove={() => this.setState({ rows: [] })}
-                    multiple={false}
-                >
-                    <Button basic>
-                        <Icon name="upload" />
-                        Upload an Excel File
-                    </Button>
-                </Upload>
+            <div className="container-fluid mt-4">
+                <div className="custom-file w-50">
+                    <input type="file" className="custom-file-input" id="customFile" onChange={this.handleUpload} />
+                    <label className="custom-file-label" htmlFor="customFile">Choose file...</label>
+                </div>
             </div>
         );
     }
