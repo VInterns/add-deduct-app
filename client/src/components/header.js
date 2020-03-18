@@ -53,6 +53,9 @@ export class Header extends React.Component {
           {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
             <Nav.Link href="/upload_users">Upload Users</Nav.Link>
           )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/salary_adjust">Salary Adjustment</Nav.Link>
+          )}
         </Nav>
         <Nav className="justify-content-end" activeKey="/home">
           {this.checkAuth(

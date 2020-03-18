@@ -16,7 +16,8 @@ import {
   UploadEmployeesScreen,
   UploadUsersScreen,
   RegistrationScreen,
-  AuthenticationScreen
+  AuthenticationScreen,
+  SalaryAdjustmentScreen
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -97,6 +98,10 @@ class App extends Component {
                       signupWelcomeImg={welcomeImg}
                     />
                   )}
+                />
+                <Route
+                    path = "/salary_adjust"
+                    component = {SalaryAdjustmentScreen}
                 />
                 <ConnectedPrivateRoute
                   allowed={["admin", "hr"]}
