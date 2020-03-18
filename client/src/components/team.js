@@ -41,7 +41,7 @@ export class Team extends React.Component {
     }
 }
 
-Team.protoTypes = {
+Team.propTypes = {
     teamName: PropTypes.string.isRequired,
     filePath: PropTypes.string.isRequired,
     tableHeader: PropTypes.arrayOf(String).isRequired
