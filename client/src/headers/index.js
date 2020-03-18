@@ -1,4 +1,4 @@
-const SALARY_ADJUST_TABLE_HEADER = [
+const salaryAdjustHeader = [
     "Vendor", "Staff ID", "Roles", "Name", "Basic Net", 
     "GB", "Net Salary", "New Basic Net Salary",
     "GB New", "Total", "Effective Date"
@@ -10,5 +10,5 @@ const SALARY_ADJUST_TABLE_HEADER = [
 
 
 module.exports = {
-    SALARY_ADJUST_TABLE_HEADER
+    salaryAdjustHeader
 }

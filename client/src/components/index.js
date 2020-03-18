@@ -10,5 +10,3 @@ export * from './team-body-upload';
 export * from './team-header';
 export * from './team-table';
 export * from './team-body';
-export * from './team-table-body';
-export * from './team-table-header';

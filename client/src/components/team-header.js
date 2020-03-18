@@ -3,16 +3,11 @@ import PropTypes from "prop-types";
 import { Header, Divider } from "semantic-ui-react";
 
 export class TeamHeader extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-
         return (
             <div>
                 <Header as='h2' floated='left'>
-                    {this.props.name + " Team"}
+                    {this.props.team + " Team"}
                 </Header>
                 <Divider clearing />
             </div>
@@ -21,6 +16,6 @@ export class TeamHeader extends React.Component {
 }
 
 TeamHeader.protoTypes = {
-    name: PropTypes.string.isRequired,
+    team: PropTypes.string.isRequired,
     filePath: PropTypes.string.isRequired
 }
