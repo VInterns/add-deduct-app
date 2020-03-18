@@ -25,7 +25,6 @@ export class Team extends React.Component {
     }
 
     render() {
-        console.log("team", this.state.excelData);
         return (
             <Container fluid className='bg-light p-5' style={{ height: '100vh' }}>
                 <div className='offset-md-2 col-md-8 border bg-white rounded p-5'>
