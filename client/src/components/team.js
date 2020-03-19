@@ -19,9 +19,8 @@ export class Team extends React.Component {
     }
 
     dataDisplayHandler(data) {
-        let bodyData = data.slice(1);
         this.setState({
-            excelData: bodyData
+            excelData: data
         })
     }
 
