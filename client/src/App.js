@@ -17,7 +17,8 @@ import {
   UploadUsersScreen,
   RegistrationScreen,
   AuthenticationScreen,
-  SalaryAdjustmentScreen
+  SalaryAdjustmentScreen,
+  OvertimeScreen
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -99,10 +100,6 @@ class App extends Component {
                     />
                   )}
                 />
-                <Route
-                    path = "/salary_adjust"
-                    component = {SalaryAdjustmentScreen}
-                />
                 <ConnectedPrivateRoute
                   allowed={["admin", "hr"]}
                   path="/upload_users"
@@ -114,6 +111,18 @@ class App extends Component {
                   path="/upload_employees"
                   exact
                   component={UploadEmployeesScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/salary_adjust"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={SalaryAdjustmentScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/overtime"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={OvertimeScreen}
                 />
               </Switch>
             </Router>
