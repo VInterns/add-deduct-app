@@ -44,7 +44,7 @@ export class Header extends React.Component {
       return null;
     }
     return (
-      <Navbar style={{ backgroundColor: "#BE0002" }} variant="dark">
+      <Navbar style={{ backgroundColor: "#db2828" }} variant="dark">
         <Navbar.Brand>Leaver App</Navbar.Brand>
         <Nav className="mr-auto">
           {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (

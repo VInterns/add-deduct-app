@@ -6,7 +6,7 @@ export class TeamHeader extends React.Component {
     render() {
         return (
             <div>
-                <Header as='h2' floated='left'>
+                <Header as='h2' floated='left' color="red">
                     {this.props.team + " Team"}
                 </Header>
                 <Divider clearing />

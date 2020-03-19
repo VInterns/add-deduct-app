@@ -5,28 +5,38 @@ import { Table } from "semantic-ui-react";
 export class TeamTable extends React.Component {
     constructor(props) {
         super(props);
-        this.renderBody = this.renderBody.bind(this);
+        // this.renderBody = this.renderBody.bind(this);
     }
 
-    renderBody() {
-        return this.props.bodyArray.map((key, index) => {
+    renderBody = (
+        this.props.bodyArray.map((row, i) => {
             return (
-                <Table.Row key={index}>
-                    <Table.Cell>{key}</Table.Cell>
+                <Table.Row key={i}>
+                    <Table.Cell>{row[i]}</Table.Cell>
                 </Table.Row>
             )
         })
-    }
+    )
+
+    renderHeader = (
+        this.props.headerArray.map((cell, index) => {
+            return <Table.HeaderCell key={index}>{cell}</Table.HeaderCell>
+        })
+    )
 
     render() {
         return (
             <div className="p-3">
-                <Table
-                    celled
-                    headerRow={this.props.headerArray}
-                    tableData={this.props.bodyArray}
-                    renderBodyRow={this.renderBody}
-                />
+                <Table celled>
+                    <Table.Header>
+                        <Table.Row>
+                            {this.renderHeader}
+                        </Table.Row>
+                    </Table.Header>
+                    <Table.Body>
+                        {this.renderBody}
+                    </Table.Body>
+                </Table>
             </div>
         );
     }

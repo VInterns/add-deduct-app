@@ -1,7 +1,6 @@
 import React from "react";
 import XLSX from "xlsx";
 import PropTypes from "prop-types";
-import { Divider } from "semantic-ui-react";
 import { TeamBodyNotice, TeamBodyUpload } from "../components";
 
 export class TeamBody extends React.Component {
@@ -30,7 +29,6 @@ export class TeamBody extends React.Component {
             <div>
                 <TeamBodyNotice teamName={this.props.team} fileName={this.props.file} />
                 <TeamBodyUpload handleFile={this.fileHandler} />
-                <Divider/>
             </div>
         );
     }
