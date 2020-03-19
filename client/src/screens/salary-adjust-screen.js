@@ -1,13 +1,13 @@
 import React from "react";
 import { Team } from "../components";
-import { SalaryAdjustment } from "../teams";
+import { SalaryAdjustmentTeam } from "../teams";
 
 export const SalaryAdjustmentScreen = () => {
     return (
         <Team
-            teamName={SalaryAdjustment.NAME}
-            filePath={SalaryAdjustment.SAMPLE_EXCEL_URL}
-            tableHeader={SalaryAdjustment.TABLE_HEADER}
+            teamName={SalaryAdjustmentTeam.NAME}
+            filePath={SalaryAdjustmentTeam.SAMPLE_EXCEL_URL}
+            tableHeader={SalaryAdjustmentTeam.TABLE_HEADER}
         />
     );
 } 

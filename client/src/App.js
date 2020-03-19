@@ -18,7 +18,10 @@ import {
   RegistrationScreen,
   AuthenticationScreen,
   SalaryAdjustmentScreen,
-  OvertimeScreen
+  OvertimeScreen,
+  NetExpensesScreen,
+  NightShiftAmountDaysScreen,
+  LostHoursScreen
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -123,6 +126,24 @@ class App extends Component {
                   allowed={["admin", "hr"]}
                   exact
                   component={OvertimeScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/net_expenses"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={NetExpensesScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/night_shift_amount_days"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={NightShiftAmountDaysScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/lost_hours"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={LostHoursScreen}
                 />
               </Switch>
             </Router>

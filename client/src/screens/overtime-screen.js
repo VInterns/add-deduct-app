@@ -1,13 +1,13 @@
 import React from "react";
 import { Team } from "../components";
-import { Overtime } from "../teams";
+import { OvertimeTeam } from "../teams";
 
 export const OvertimeScreen = () => {
     return(
         <Team
-            teamName={Overtime.NAME}
-            filePath={Overtime.SAMPLE_EXCEL_URL}
-            tableHeader={Overtime.TABLE_HEADER}
+            teamName={OvertimeTeam.NAME}
+            filePath={OvertimeTeam.SAMPLE_EXCEL_URL}
+            tableHeader={OvertimeTeam.TABLE_HEADER}
         />
     )
 }

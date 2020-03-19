@@ -59,6 +59,15 @@ export class Header extends React.Component {
           {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
             <Nav.Link href="/overtime">Overtime</Nav.Link>
           )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/net_expenses">Net Expenses</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/night_shift_amount_days">Night Shift Amount Days</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/lost_hours">Lost Hours</Nav.Link>
+          )}
         </Nav>
         <Nav className="justify-content-end" activeKey="/home">
           {this.checkAuth(
