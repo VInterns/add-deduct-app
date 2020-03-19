@@ -13,14 +13,16 @@ export class Team extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            excelData: []
+            excelData: [],
+            totalCount: 0
         }
         this.dataDisplayHandler = this.dataDisplayHandler.bind(this);
     }
 
     dataDisplayHandler(data) {
         this.setState({
-            excelData: data
+            excelData: data,
+            totalCount: data.length - 1
         })
     }
 
@@ -34,7 +36,7 @@ export class Team extends React.Component {
                         file={this.props.filePath}
                         displayData={this.dataDisplayHandler}
                     />
-                    <TeamTable headerArray={this.props.tableHeader} bodyArray={this.state.excelData} />
+                    <TeamTable headerArray={this.props.tableHeader} bodyArray={this.state.excelData} totalCount={this.state.totalCount} />
                 </div>
             </Container>
         );
