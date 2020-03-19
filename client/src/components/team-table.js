@@ -10,7 +10,7 @@ import {
 export class TeamTable extends React.Component {
     render() {
         return (
-            <div className="mt-4 p-3">
+            <div className="p-3">
                 <div className='row'>
                     <TeamTablePageSize
                         limit={'10'}

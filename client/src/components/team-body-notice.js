@@ -5,7 +5,7 @@ import { Message } from "semantic-ui-react";
 export class TeamBodyNotice extends React.Component {
     render() {
         return (
-            <div className='container-fluid mt-5'>
+            <div className='container-fluid mt-4'>
                 <Message warning>
                     <Message.Header>Important</Message.Header>
                     {"Please use the following "}
