@@ -19,12 +19,12 @@ export class TeamBodyUpload extends React.Component {
 
     render() {
         return (
-            <div className="container-fluid mt-4">
+            <div>
                 <Button
                     basic
                     onClick={() => this.fileInput.current.click()}
                 >
-                    <Icon name='upload' />
+                    <Icon name='upload'/>
                     Upload an Excel File
                 </Button>
                 <input

@@ -24,6 +24,11 @@ export class Team extends React.Component {
         })
     }
 
+    submitTableHandler(event){
+        event.preventDefault();
+        console.warn("onSubmitTable Clicked!");
+    }
+
     render() {
         return (
             <Container fluid className='bg-light p-5' style={{ height: '100vh' }}>
@@ -33,6 +38,7 @@ export class Team extends React.Component {
                         team={this.props.teamName}
                         file={this.props.filePath}
                         displayData={this.dataDisplayHandler}
+                        onSubmitTable={this.submitTableHandler}
                     />
                     <TeamTable headerArray={this.props.tableHeader} bodyArray={this.state.excelData} totalCount={this.state.totalCount} />
                 </div>

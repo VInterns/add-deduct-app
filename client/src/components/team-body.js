@@ -2,7 +2,7 @@ import React from "react";
 import XLSX from "xlsx";
 import PropTypes from "prop-types";
 import { TeamBodyNotice, TeamBodyUpload } from "../components";
-import { Divider } from "semantic-ui-react";
+import { Divider, Button, Icon } from "semantic-ui-react";
 
 export class TeamBody extends React.Component {
 
@@ -29,7 +29,16 @@ export class TeamBody extends React.Component {
         return (
             <div>
                 <TeamBodyNotice teamName={this.props.team} fileName={this.props.file} />
-                <TeamBodyUpload handleFile={this.fileHandler} />
+                <div className='d-flex flex-row mt-4 ml-3 mr-3'>
+                    <TeamBodyUpload handleFile={this.fileHandler} />
+                    <Button
+                        negative
+                        className='ml-2'
+                        onClick={this.props.onSubmitTable}
+                    >
+                        Submit Data
+                    </Button>
+                </div>
                 <div className='pl-3 pr-3 mt-1'>
                     <Divider />
                 </div>
@@ -41,5 +50,6 @@ export class TeamBody extends React.Component {
 TeamBody.propTypes = {
     team: PropTypes.string.isRequired,
     file: PropTypes.string.isRequired,
-    displayData: PropTypes.func.isRequired
+    displayData: PropTypes.func.isRequired,
+    onSubmitTable: PropTypes.func.isRequired
 }
