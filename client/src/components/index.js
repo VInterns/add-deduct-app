@@ -14,3 +14,6 @@ export * from './team-table-header';
 export * from './team-table-body';
 export * from './team-table-body-row';
 export * from './team-table-page-size';
+export * from './hr-team';
+export * from './hr-team-body';
+export * from './hr-team-table';

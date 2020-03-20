@@ -35,7 +35,8 @@ import {
   GYMScreen,
   PenaltiesDetailedScreen,
   OnCallScreen,
-  ProfileChangeScreen
+  ProfileChangeScreen,
+  HRScreen
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -116,6 +117,12 @@ class App extends Component {
                       signupWelcomeImg={welcomeImg}
                     />
                   )}
+                />
+                <ConnectedPrivateRoute
+                  allowed={["admin", "hr"]}
+                  path="/hr"
+                  exact
+                  component={HRScreen}
                 />
                 <ConnectedPrivateRoute
                   allowed={["admin", "hr"]}

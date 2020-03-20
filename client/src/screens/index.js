@@ -21,3 +21,4 @@ export * from './gym-screen';
 export * from './penalties-detailed-screen';
 export * from './on-call-screen';
 export * from './profile-change-screen';
+export * from './hr-screen';

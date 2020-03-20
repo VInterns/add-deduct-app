@@ -119,7 +119,7 @@ export class Header extends React.Component {
           {this.checkAuth(
             this.state.myResignations,
             this.props.account.roles
-          ) && <Nav.Link href="/my-resignations">My Resignations</Nav.Link>}
+          ) && <Nav.Link href="/hr">HR</Nav.Link>}
           <Nav.Link
             position="right"
             onClick={() => {
