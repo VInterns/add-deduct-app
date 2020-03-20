@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Nav, Navbar, Image } from "react-bootstrap";
 import { bindActionCreators } from "redux";
+import {Label} from "semantic-ui-react";
 import Logo from "../assets/images/logo-wht.png";
 
 import { logout } from "../state";
@@ -48,7 +49,7 @@ export class Header extends React.Component {
       <Navbar style={{ backgroundColor: "#db2828" }} variant="dark">
         <Navbar.Brand>
           <Image src={Logo} style={{height: "50px", width:"50px"}} rounded/>
-          Leaver App
+          <label className='font-weight-bold'>Leaver App</label>
         </Navbar.Brand>
         <Nav className="mr-auto">
           {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (

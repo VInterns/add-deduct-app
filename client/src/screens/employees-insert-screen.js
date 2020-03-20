@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Progress } from "reactstrap";
+import { Container, Header, Divider, Button, Icon } from "semantic-ui-react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 var XLSX = require("xlsx");
@@ -14,6 +15,7 @@ export class UploadEmployeesScreen extends Component {
       readyUpload: false,
       collection: "employees"
     };
+    this.fileInput = React.createRef();
   }
   checkMimeType = event => {
     let file = event.target.files[0];
@@ -116,36 +118,43 @@ export class UploadEmployeesScreen extends Component {
 
   render() {
     return (
-      <div className="container">
-        <center style={{ margin: "25px" }}>
-          <div className="row">
-            <div className="offset-md-3 col-md-6">
-              <div className="form-group files">
-                <h1>Upload Employees File </h1>
-                <input
-                  type="file"
-                  className="form-control"
-                  multiple
-                  onChange={this.onChangeHandler}
-                />
-              </div>
-              <div className="form-group">
-                <ToastContainer />
-                <Progress max="100" color="success" value={this.state.loaded}>
-                  {Math.round(this.state.loaded, 2)}%
-                </Progress>
-              </div>
-              <button
-                type="button"
-                className="btn btn-success btn-block"
-                onClick={this.onClickHandler}
-              >
-                Upload
-              </button>
+      <Container fluid className='bg-light p-5' style={{ height: "100vh" }}>
+        <div className="offset-md-2 col-md-8 border bg-white rounded p-5">
+          <Header as="h2" color='red'>Employees Upload</Header>
+          <Divider clearing />
+          <div className='d-flex flex-column align-items-center justify-content-center mt-5'>
+            <Button
+              basic
+              className='w-50'
+              onClick={() => this.fileInput.current.click()}
+            >
+              <Icon name='file excel outline' />
+                Choose Your Employees Excel File
+            </Button>
+            <input
+              ref={this.fileInput}
+              type="file"
+              hidden
+              onChange={this.onChangeHandler}
+            />
+            <div className="form-group w-50 mt-3">
+              <ToastContainer />
+              <Progress max="100" color="success" value={this.state.loaded}>
+                {Math.round(this.state.loaded, 2)}%
+              </Progress>
             </div>
+            <Button
+              positive
+              className='w-50'
+              onClick={this.onClickHandler}
+            >
+              <Icon name='cloud upload'/>
+              Upload
+          </Button>
           </div>
-        </center>
-      </div>
+
+        </div>
+      </Container>
     );
   }
 }

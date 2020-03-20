@@ -7,7 +7,7 @@ export class TeamBodyNotice extends React.Component {
         return (
             <div className='container-fluid mt-4'>
                 <Message warning>
-                    <Message.Header>Important</Message.Header>
+                    <Message.Header>Before Uploading</Message.Header>
                     {"Please use the following "}
                     <a
                         href={this.props.fileName}
