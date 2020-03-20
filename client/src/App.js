@@ -21,7 +21,21 @@ import {
   OvertimeScreen,
   NetExpensesScreen,
   NightShiftAmountDaysScreen,
-  LostHoursScreen
+  LostHoursScreen,
+  OvertimeRewardGrossScreen,
+  NoShowDetailedScreen,
+  NoShowsScreen,
+  IncentivesGrossScreen,
+  IncentivesNetScreen,
+  MobileBillScreen,
+  SickLeaveDetailedScreen,
+  SickLeaveConsScreen,
+  UKDEReferralProgNetAmountScreen,
+  AwardGrossAmountScreen,
+  GYMScreen,
+  PenaltiesDetailedScreen,
+  OnCallScreen,
+  ProfileChangeScreen
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -144,6 +158,90 @@ class App extends Component {
                   allowed={["admin", "hr"]}
                   exact
                   component={LostHoursScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/overtime_reward_gross"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={OvertimeRewardGrossScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/no_show_detailed"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={NoShowDetailedScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/no_shows"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={NoShowsScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/incentives_gross"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={IncentivesGrossScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/incentives_net"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={IncentivesNetScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/mobile_bill"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={MobileBillScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/sick_leave_detailed"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={SickLeaveDetailedScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/sick_leave_cons"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={SickLeaveConsScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/ukde_referral"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={UKDEReferralProgNetAmountScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/award_gross_amount"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={AwardGrossAmountScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/gym"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={GYMScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/penalties_detailed"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={PenaltiesDetailedScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/on_call"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={OnCallScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/profile_change"
+                  allowed={["admin", "hr"]}
+                  exact
+                  component={ProfileChangeScreen}
                 />
               </Switch>
             </Router>

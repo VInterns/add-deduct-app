@@ -72,6 +72,48 @@ export class Header extends React.Component {
           {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
             <Nav.Link href="/lost_hours">Lost Hours</Nav.Link>
           )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/overtime_reward_gross">Overtime Reward Gross</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/no_show_detailed">No Show Detailed</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/no_shows">No Shows</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/incentives_gross">Incentives Gross</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/incentives_net">Incentives Net</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/mobile_bill">Mobile Bill</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/sick_leave_detailed">Sick Leave Detailed</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/sick_leave_cons">Sick Leave Cons</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/ukde_referral">UK-DE Referral Prog Net Amount</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/award_gross_amount">Award Gross Amount</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/gym">GYM</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/penalties_detailed">Penalties Detailed</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/on_call">On Call</Nav.Link>
+          )}
+          {this.checkAuth(this.state.uploadUsers, this.props.account.roles) && (
+            <Nav.Link href="/profile_change">Profile Change</Nav.Link>
+          )}
         </Nav>
         <Nav className="justify-content-end" activeKey="/home">
           {this.checkAuth(

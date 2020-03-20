@@ -29,16 +29,108 @@ const LostHoursTeam = {
     "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/fc8d293e2f9f6bf0a21ec380e3317900/samples-lost-hrs.xlsx"
 }
 
-/* const TeamName = {
-    "NAME": "",
-    "TABLE_HEADER": [],
-    "SAMPLE_EXCEL_URL": ""
-} */
+const OvertimeRewardGrossTeam = {
+    "NAME": "Overtime Reward Gross",
+    "TABLE_HEADER": ["Vendor", "Staff ID", "Name", "Total Reward Payment"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/7eeca50709e0ffcbe54abafc976b780d/samples-overtime-gross-reward.xlsx"
+}
+
+const NoShowDetailedTeam = {
+    "NAME": "No Show Detailed",
+    "TABLE_HEADER": ["IEX", "Date", "Exception", "Name", "MU", "MU Name", "Manager", "Supervisor", "Staff Number", "Account", "Vendor"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/ab45987f853e98a91f44ee11be36ea81/samples-no-show-detailed.xlsx"
+}
+
+const NoShowsTeam = {
+    "NAME": "No Shows",
+    "TABLE_HEADER": ["Vendor", "ID", "Name", "Total Deducted Days", "Refunded Days"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/25650c0777089b550477ba0b75bad8bf/samples-no-shows.xlsx"
+}
+
+const IncentivesGrossTeam = {
+    "NAME": "Incentives Gross",
+    "TABLE_HEADER": ["Vendor", "Staff ID", "Name", "Total Gross Incentives", "Account"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/979790eda2c934443f67e170b942e434/samples-incentives-gross.xlsx"
+}
+
+const IncentivesNetTeam = {
+    "NAME": "Incentives Net",
+    "TABLE_HEADER": ["Vendor", "Staff ID", "Name", "Amount"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/e5f829e68c9011276b7f139764a7a7a2/samples-incentives-net.xlsx"
+}
+
+const MobileBillTeam = {
+    "NAME": "Mobile Bill",
+    "TABLE_HEADER": ["Staff ID", "Name", "Total Open Amount", "Vendor"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/040a681046b3510ce32cfa7c806cc26d/samples-mobile-bill.xlsx"
+}
+
+const SickLeaveDetailedTeam = {
+    "NAME": "Sick Leave Detailed",
+    "TABLE_HEADER": ["IEX", "Date", "Exception", "Name", "MU", "MU Name", "Manager", "Supervisor", "Staff Number", "Account", "Vendor"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/ffd26567d4e4e33124102647f800b5aa/samples-sick-leave-detailed.xlsx"
+}
+
+const SickLeaveConsTeam = {
+    "NAME": "Sick Leave Cons",
+    "TABLE_HEADER": ["Vendor", "ID", "Name", "Sum of Sick to be Deducted"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/5d5df96cee865385c97a115fc8241ff4/samples-sick-leave-cons.xlsx"
+}
+
+const UKDEReferralProgNetAmountTeam = {
+    "NAME": "UK-DE Referral Prog Net Amount",
+    "TABLE_HEADER": ["Vendor", "ID", "Name", "Net"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/18d0d2b044101d4c792ca243575585a0/samples-ukde.xlsx"
+}
+
+const AwardGrossAmountTeam = {
+    "NAME": "Award Gross Amount",
+    "TABLE_HEADER": ["Vendor", "Staff ID", "Names", "Amount of Rewards"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/96720131e78b3b4c571d677086cc2546/samples-award-gross-amount.xlsx"
+}
+
+const GYMTeam = {
+    "NAME": "GYM",
+    "TABLE_HEADER": ["Vendor", "ID", "Name", "Amount"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/5052110b048cfa1e540e8a9becd4cbb9/samples-gym.xlsx"
+}
+
+const PenaltiesDetailedTeam = {
+    "NAME": "Penalties Detailed",
+    "TABLE_HEADER": ["Vendor", "ID", "Violater Name", "Violation Type", "Incident Details", "Incident Date", "Penalty Applied", "Penalty Receiving Date"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/e19683cf5415fbffe9b7722b3f67478a/samples-penalties-detailed.xlsx"
+}
+
+const OnCallTeam = {
+    "NAME": "On Call",
+    "TABLE_HEADER": ["Vendor", "ID", "Name", "Days"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/aefa922b26fa1a99982a53884128a040/samples-on-call.xlsx"
+}
+
+const ProfileChangeTeam = {
+    "NAME": "Profile Change",
+    "TABLE_HEADER": ["ID", "Vendor", "Name", "Effective Date", "Account", "New Basic", "New GB", "New Total"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/b55869408be41dbe3f96b3d8421512ec/samples-profile-change.xlsx"
+}
 
 module.exports = {
     SalaryAdjustmentTeam,
     OvertimeTeam,
     NetExpensesTeam,
     NightShiftAmountDaysTeam,
-    LostHoursTeam
+    LostHoursTeam,
+    OvertimeRewardGrossTeam,
+    NoShowDetailedTeam,
+    NoShowsTeam,
+    IncentivesGrossTeam,
+    IncentivesNetTeam,
+    MobileBillTeam,
+    SickLeaveDetailedTeam,
+    SickLeaveConsTeam,
+    UKDEReferralProgNetAmountTeam,
+    AwardGrossAmountTeam,
+    GYMTeam,
+    PenaltiesDetailedTeam,
+    OnCallTeam,
+    ProfileChangeTeam
 }
