@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { Nav, Navbar, Image } from "react-bootstrap";
 import { bindActionCreators } from "redux";
-import {Label} from "semantic-ui-react";
 import Logo from "../assets/images/logo-wht.png";
 
 import { logout } from "../state";

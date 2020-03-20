@@ -2,7 +2,7 @@ import React from "react";
 import XLSX from "xlsx";
 import PropTypes from "prop-types";
 import { TeamBodyNotice, TeamBodyUpload } from "../components";
-import { Divider, Button, Icon } from "semantic-ui-react";
+import { Divider, Button } from "semantic-ui-react";
 
 export class TeamBody extends React.Component {
 
