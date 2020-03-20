@@ -12,7 +12,6 @@ export const HRTeamBody = (props) => {
             <div className='row pl-3'>
                 <Button
                     basic
-                    onClick={props.clickHandler}
                 >
                     <Icon name='download' className="mr-3" />
                     Download All
@@ -26,5 +25,5 @@ export const HRTeamBody = (props) => {
 }
 
 HRTeamBody.propTypes = {
-    clickHandler: PropTypes.func.isRequired
+    handleClick: PropTypes.func.isRequired
 }
