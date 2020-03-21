@@ -32,6 +32,7 @@
     "express": "^4.17.1",
     "express-session": "^1.17.0",
     "form-data": "^3.0.0",
+    "iframe-react": "^1.0.1",
     "migrate-mongo": "^7.0.1",
     "mongodb": "^3.5.2",
     "mongodb-migrations": "^0.8.5",
@@ -46,6 +47,7 @@
     "react-confirm-alert": "^2.5.1",
     "react-data-table-component": "^6.2.2",
     "react-html-table-to-excel": "^2.0.0",
+    "react-iframe": "^1.8.0",
     "react-router-dom": "^5.1.2",
     "react-toastify": "^5.5.0",
     "reactjs-popup": "^1.5.0",
@@ -58,6 +60,6 @@
     "concurrently": "^5.0.2",
     "cross-env": "^7.0.1",
     "nodemon": "^2.0.2",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.4"
   }
 }

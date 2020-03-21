@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import iframe from 'bootstrap'
 import { Table } from 'reactstrap';
-import { Navbar, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
+import { Navbar, Nav, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from "reactstrap";
 
 export class HrView extends Component {
     constructor() {
@@ -12,7 +13,6 @@ export class HrView extends Component {
 
         this.checkStatus = this.checkStatus.bind(this);
     }
-    
 
     checkStatus(status){
         switch(status){
@@ -30,6 +30,7 @@ export class HrView extends Component {
                 );
         }
     }
+   
 
     render() {
         return (
@@ -42,15 +43,31 @@ export class HrView extends Component {
                     
                     <Navbar color="light" light expand="md">
       <Nav className="mr-auto" navbar>
-        <NavItem>
-          <NavLink href="/components/">Salary Adjustment</NavLink>
-        </NavItem>
-        <NavItem>
-        <NavLink href="/components/">Over Time</NavLink>
-        </NavItem>
-        <NavItem>
-        <NavLink href="/components/">Net Expenses</NavLink>
-        </NavItem>
+      <UncontrolledDropdown setActiveFromChild>
+          <DropdownToggle tag="a" className="nav-link" caret>
+            View
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem tag="a" target = 'frame1' hover onClick={()=>{
+
+
+
+
+
+
+
+            }}>Salary Adjustment</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Over Time</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+            <DropdownItem tag="a" href="/blah" target = 'frame1' hover>Net Expenses</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>
       </Nav>
       <Nav className = "ml-auto" navbar >
       <UncontrolledDropdown setActiveFromChild>
@@ -66,8 +83,12 @@ export class HrView extends Component {
       </Nav>
     </Navbar>
                 </header>
-                <center> <iframe name="frame1" width="95%" height="100%" > </iframe> </center>
+        
             </center>
+
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe name = "frame1" class="embed-responsive-item" ></iframe>
+        </div>   
         </div>
         )
     }
