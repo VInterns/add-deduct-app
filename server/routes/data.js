@@ -5,7 +5,7 @@ module.exports = (db) => {
 
     let router = new Router();
 
-    // API: SUBMIT DATA
+    // API: IMPORT DATA
     router.post("/submit_data", (req, res) => {
         let data = req.body.what_to_submit;
         let collection = req.body.where_to_submit;
@@ -22,6 +22,20 @@ module.exports = (db) => {
                     throw err;
                 } else {
                     return res.status(200).send(`${result.insertedCount} record(s) successfully inserted into ${collection}.`)
+                }
+            })
+    })
+
+    // API: EXPORT DATA
+    router.get("/export_data", (req, res) => {
+        let collection = req.body.collection;
+        db.collection(collection)
+            .find({}).toArray(function(err, data){
+                if(err){
+                    console.error(err);
+                    throw err;
+                } else {
+                    return res.status(200).json(data)
                 }
             })
     })
