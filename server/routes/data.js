@@ -21,10 +21,7 @@ module.exports = (db) => {
                     console.error(err);
                     throw err;
                 } else {
-                    console.info("Records inserted: " + result.insertedCount + " record(s).");
-                    return res.status(200).json({
-                        "response": `${result.insertedCount} record(s) successfully inserted into ${collection}.`
-                    })
+                    return res.status(200).send(`${result.insertedCount} record(s) successfully inserted into ${collection}.`)
                 }
             })
     })
