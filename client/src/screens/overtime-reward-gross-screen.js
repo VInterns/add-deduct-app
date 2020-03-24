@@ -7,6 +7,7 @@ export const OvertimeRewardGrossScreen = () => {
         <Team
             teamName={OvertimeRewardGrossTeam.NAME}
             filePath={OvertimeRewardGrossTeam.SAMPLE_EXCEL_URL}
+            collection={OvertimeRewardGrossTeam.COLLECTION_NAME}
             tableHeader={OvertimeRewardGrossTeam.TABLE_HEADER}
         />
     );

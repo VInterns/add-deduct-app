@@ -7,6 +7,7 @@ export const AwardGrossAmountScreen = () => {
         <Team
             teamName={AwardGrossAmountTeam.NAME}
             filePath={AwardGrossAmountTeam.SAMPLE_EXCEL_URL}
+            collection={AwardGrossAmountTeam.COLLECTION_NAME}
             tableHeader={AwardGrossAmountTeam.TABLE_HEADER}
         />
     );

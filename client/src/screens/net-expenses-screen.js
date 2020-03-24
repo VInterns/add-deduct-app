@@ -7,6 +7,7 @@ export const NetExpensesScreen = () => {
         <Team
         teamName={NetExpensesTeam.NAME}
         filePath={NetExpensesTeam.SAMPLE_EXCEL_URL}
+        collection={NetExpensesTeam.COLLECTION_NAME}
         tableHeader={NetExpensesTeam.TABLE_HEADER}
         />
     )

@@ -7,6 +7,7 @@ export const ProfileChangeScreen = () => {
         <Team
             teamName={ProfileChangeTeam.NAME}
             filePath={ProfileChangeTeam.SAMPLE_EXCEL_URL}
+            collection={ProfileChangeTeam.COLLECTION_NAME}
             tableHeader={ProfileChangeTeam.TABLE_HEADER}
         />
     );

@@ -7,6 +7,7 @@ export const IncentivesNetScreen = () => {
         <Team
             teamName={IncentivesNetTeam.NAME}
             filePath={IncentivesNetTeam.SAMPLE_EXCEL_URL}
+            collection={IncentivesNetTeam.COLLECTION_NAME}
             tableHeader={IncentivesNetTeam.TABLE_HEADER}
         />
     );

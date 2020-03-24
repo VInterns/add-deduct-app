@@ -7,6 +7,7 @@ export const OnCallScreen = () => {
         <Team
             teamName={OnCallTeam.NAME}
             filePath={OnCallTeam.SAMPLE_EXCEL_URL}
+            collection={OnCallTeam.COLLECTION_NAME}
             tableHeader={OnCallTeam.TABLE_HEADER}
         />
     );

@@ -7,6 +7,7 @@ export const MobileBillScreen = () => {
         <Team
             teamName={MobileBillTeam.NAME}
             filePath={MobileBillTeam.SAMPLE_EXCEL_URL}
+            collection={MobileBillTeam.COLLECTION_NAME}
             tableHeader={MobileBillTeam.TABLE_HEADER}
         />
     );

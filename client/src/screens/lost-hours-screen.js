@@ -7,6 +7,7 @@ export const LostHoursScreen = () => {
         <Team
             teamName={LostHoursTeam.NAME}
             filePath={LostHoursTeam.SAMPLE_EXCEL_URL}
+            collection={LostHoursTeam.COLLECTION_NAME}
             tableHeader={LostHoursTeam.TABLE_HEADER}
         />
     )

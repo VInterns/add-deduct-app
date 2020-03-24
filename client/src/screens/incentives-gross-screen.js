@@ -7,6 +7,7 @@ export const IncentivesGrossScreen = () => {
         <Team
             teamName={IncentivesGrossTeam.NAME}
             filePath={IncentivesGrossTeam.SAMPLE_EXCEL_URL}
+            collection={IncentivesGrossTeam.COLLECTION_NAME}
             tableHeader={IncentivesGrossTeam.TABLE_HEADER}
         />
     );

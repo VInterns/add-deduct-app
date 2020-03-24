@@ -7,6 +7,7 @@ export const PenaltiesDetailedScreen = () => {
         <Team
             teamName={PenaltiesDetailedTeam.NAME}
             filePath={PenaltiesDetailedTeam.SAMPLE_EXCEL_URL}
+            collection={PenaltiesDetailedTeam.COLLECTION_NAME}
             tableHeader={PenaltiesDetailedTeam.TABLE_HEADER}
         />
     );

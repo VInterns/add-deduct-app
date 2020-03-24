@@ -7,6 +7,7 @@ export const NoShowDetailedScreen = () => {
         <Team
             teamName={NoShowDetailedTeam.NAME}
             filePath={NoShowDetailedTeam.SAMPLE_EXCEL_URL}
+            collection={NoShowDetailedTeam.COLLECTION_NAME}
             tableHeader={NoShowDetailedTeam.TABLE_HEADER}
         />
     );

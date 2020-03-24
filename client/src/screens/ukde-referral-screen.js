@@ -7,6 +7,7 @@ export const UKDEReferralProgNetAmountScreen = () => {
         <Team
             teamName={UKDEReferralProgNetAmountTeam.NAME}
             filePath={UKDEReferralProgNetAmountTeam.SAMPLE_EXCEL_URL}
+            collection={UKDEReferralProgNetAmountTeam.COLLECTION_NAME}
             tableHeader={UKDEReferralProgNetAmountTeam.TABLE_HEADER}
         />
     );

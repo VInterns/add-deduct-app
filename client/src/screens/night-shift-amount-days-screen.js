@@ -7,6 +7,7 @@ export const NightShiftAmountDaysScreen = () => {
         <Team
             teamName={NightShiftAmountDaysTeam.NAME}
             filePath={NightShiftAmountDaysTeam.SAMPLE_EXCEL_URL}
+            collection={NightShiftAmountDaysTeam.COLLECTION_NAME}
             tableHeader={NightShiftAmountDaysTeam.TABLE_HEADER}
         />
     )

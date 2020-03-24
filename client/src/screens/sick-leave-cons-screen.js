@@ -7,6 +7,7 @@ export const SickLeaveConsScreen = () => {
         <Team
             teamName={SickLeaveConsTeam.NAME}
             filePath={SickLeaveConsTeam.SAMPLE_EXCEL_URL}
+            collection={SickLeaveConsTeam.COLLECTION_NAME}
             tableHeader={SickLeaveConsTeam.TABLE_HEADER}
         />
     );

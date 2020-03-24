@@ -7,6 +7,7 @@ export const GYMScreen = () => {
         <Team
             teamName={GYMTeam.NAME}
             filePath={GYMTeam.SAMPLE_EXCEL_URL}
+            collection={GYMTeam.COLLECTION_NAME}
             tableHeader={GYMTeam.TABLE_HEADER}
         />
     );
