@@ -27,7 +27,7 @@ module.exports = (db) => {
     })
 
     // API: EXPORT DATA
-    router.get("/export_data", (req, res) => {
+    router.post("/export_data", (req, res) => {
         let collection = req.body.collection;
         db.collection(collection)
             .find({}).toArray(function(err, data){
@@ -35,7 +35,7 @@ module.exports = (db) => {
                     console.error(err);
                     throw err;
                 } else {
-                    return res.status(200).json(data)
+                    return res.status(200).send(data)
                 }
             })
     })
