@@ -3,10 +3,11 @@ import { Team } from "../components";
 import { OvertimeTeam } from "../teams";
 
 export const OvertimeScreen = () => {
-    return(
+    return (
         <Team
             teamName={OvertimeTeam.NAME}
             filePath={OvertimeTeam.SAMPLE_EXCEL_URL}
+            collection={OvertimeTeam.COLLECTION_NAME}
             tableHeader={OvertimeTeam.TABLE_HEADER}
         />
     )

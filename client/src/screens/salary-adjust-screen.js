@@ -7,6 +7,7 @@ export const SalaryAdjustmentScreen = () => {
         <Team
             teamName={SalaryAdjustmentTeam.NAME}
             filePath={SalaryAdjustmentTeam.SAMPLE_EXCEL_URL}
+            collection={SalaryAdjustmentTeam.COLLECTION_NAME}
             tableHeader={SalaryAdjustmentTeam.TABLE_HEADER}
         />
     );
