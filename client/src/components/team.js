@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { SUBMIT_DATA_API } from "../api";
 import { Container } from "semantic-ui-react";
 import {
     TeamHeader,
@@ -12,9 +13,10 @@ export class Team extends React.Component {
         super(props);
         this.state = {
             excelData: [],
-            totalCount: 0
+            totalCount: 0,
         }
         this.dataDisplayHandler = this.dataDisplayHandler.bind(this);
+        this.submitTableHandler = this.submitTableHandler.bind(this);
     }
 
     dataDisplayHandler(data) {
@@ -24,9 +26,25 @@ export class Team extends React.Component {
         })
     }
 
-    submitTableHandler(event){
+    submitTableHandler(event) {
         event.preventDefault();
-        console.warn("onSubmitTable Clicked!");
+        let collectionName = this.props.collection;
+        let data = this.state.excelData;
+
+        fetch(SUBMIT_DATA_API, {
+            headers: { "Content-Type": "application/json" },
+            method: "post",
+            body: JSON.stringify({
+                what_to_submit: data,
+                where_to_submit: collectionName
+            })
+        })
+            .then(res => {
+                return console.log(res)
+            })
+            .catch(err => {
+                throw err;
+            })
     }
 
     render() {
@@ -40,7 +58,11 @@ export class Team extends React.Component {
                         displayData={this.dataDisplayHandler}
                         onSubmitTable={this.submitTableHandler}
                     />
-                    <TeamTable headerArray={this.props.tableHeader} bodyArray={this.state.excelData} totalCount={this.state.totalCount} />
+                    <TeamTable
+                        headerArray={this.props.tableHeader}
+                        bodyArray={this.state.excelData}
+                        totalCount={this.state.totalCount}
+                    />
                 </div>
             </Container>
         );
@@ -50,5 +72,6 @@ export class Team extends React.Component {
 Team.propTypes = {
     teamName: PropTypes.string.isRequired,
     filePath: PropTypes.string.isRequired,
+    collection: PropTypes.string.isRequired,
     tableHeader: PropTypes.arrayOf(String).isRequired
 }
