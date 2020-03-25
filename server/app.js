@@ -22,6 +22,7 @@ const appFactory = (db, sessionStoreProvider) => {
     })
   );
   app.use(morgan("dev"));
+  app.use(express.static('public'));
 
   app.use(
     bodyParser.urlencoded({
@@ -72,6 +73,7 @@ const appFactory = (db, sessionStoreProvider) => {
     res.sendFile(path.join(__dirname, "static/index.html"));
   });
   app.use(cors());
+  
 
   return app;
 };
