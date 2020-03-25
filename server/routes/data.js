@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const { normalizeData } = require("../util");
+const { exportExcel } = require("../services/file");
 
 module.exports = (db) => {
 
@@ -15,12 +16,14 @@ module.exports = (db) => {
         // replace number keys with the actual keys
         let normalized = normalizeData(data[0], data.slice(1));
 
+
         db.collection(collection)
             .insertMany(normalized, function (err, result) {
                 if (err) {
                     console.error(err);
                     throw err;
                 } else {
+                    exportExcel(collection, normalized);
                     return res.status(200).send(`${result.insertedCount} record(s) successfully inserted into ${collection}.`)
                 }
             })
@@ -30,8 +33,8 @@ module.exports = (db) => {
     router.post("/export_data", (req, res) => {
         let collection = req.body.collection;
         db.collection(collection)
-            .find({}).toArray(function(err, data){
-                if(err){
+            .find({}).toArray(function (err, data) {
+                if (err) {
                     console.error(err);
                     throw err;
                 } else {
