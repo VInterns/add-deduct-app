@@ -8,18 +8,24 @@ import {
 } from "../components";
 
 const FILES = [
-    { "fileName": "salary_adjustment_grouped.xlsx", "lastUploadBy": "Islam", "lastUploadAt": "20-03-2020, 17:13" },
-    { "fileName": "overtime_grouped.xlsx", "lastUploadBy": "Islam", "lastUploadAt": "20-03-2020, 17:13" },
-    { "fileName": "salary_adjustment_grouped.xlsx", "lastUploadBy": "Islam", "lastUploadAt": "20-03-2020, 17:13" }
+    "salary-adjustment.xlsx", "overtime.xlsx",
+    "net-expenses.xlsx", "night-shift-amount-days.xlsx",
+    "lost-hours.xlsx", "overtime-reward-gross.xlsx",
+    "no-show-detailed.xlsx", "no-shows.xlsx",
+    "incentives-gross.xlsx", "incentives-net.xlsx",
+    "mobile-bill.xlsx", "sick-leave-detailed.xlsx",
+    "sick-leave-cons.xlsx", "ukde-referral-prog-net-amount.xlsx",
+    "award-gross-amount.xlsx", "gym.xlsx", "penalties-detailed.xlsx",
+    "on-call.xlsx", "profile-change.xlsx"
 ]
 
 export const HRTeam = (props) => {
     return (
-        <Container fluid className='bg-light p-5' style={{ height: '100vh' }}>
+        <Container fluid className='bg-light p-5' style={{ height: '160vh' }}>
             <div className='offset-md-2 col-md-8 border bg-white rounded p-5'>
                 <TeamHeader team={props.teamName} />
                 <HRTeamBody />
-                <HRTeamTable header={props.tableHeader} body={FILES} />
+                <HRTeamTable body={FILES} header={props.tableHeader} />
             </div>
         </Container>
     )
@@ -27,5 +33,5 @@ export const HRTeam = (props) => {
 
 HRTeam.protoTypes = {
     teamName: PropTypes.string.isRequired,
-    tableHeader: PropTypes.arrayOf(String).isRequired
+    tableHeader: PropTypes.string.isRequired
 }
