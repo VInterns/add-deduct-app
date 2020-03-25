@@ -3,7 +3,6 @@ const { normalizeData } = require("../util");
 const { exportExcel } = require("../services/file");
 
 module.exports = (db) => {
-
     let router = new Router();
 
     // API: IMPORT DATA
@@ -15,7 +14,6 @@ module.exports = (db) => {
         // [[val], [val], [val]] => [{0:val}, {1:val}, {2:val}]
         // replace number keys with the actual keys
         let normalized = normalizeData(data[0], data.slice(1));
-
 
         db.collection(collection)
             .insertMany(normalized, function (err, result) {
@@ -30,17 +28,10 @@ module.exports = (db) => {
     })
 
     // API: EXPORT DATA
-    router.post("/export_data", (req, res) => {
-        let collection = req.body.collection;
-        db.collection(collection)
-            .find({}).toArray(function (err, data) {
-                if (err) {
-                    console.error(err);
-                    throw err;
-                } else {
-                    return res.status(200).send(data)
-                }
-            })
+    router.get("/export_data", (req, res) => {
+        let filePath = `${__dirname}/../public/${req.query.file_name}`;
+        res.status(200).download(filePath);
+        res.end();
     })
 
     return router;
