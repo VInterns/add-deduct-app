@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const { Router } = require("express");
 const { normalizeData } = require("../util");
 const { exportExcel } = require("../services/file");
@@ -29,9 +31,9 @@ module.exports = (db) => {
 
     // API: EXPORT DATA
     router.get("/export_data", (req, res) => {
-        let filePath = `${__dirname}/../public/${req.query.file_name}`;
-        res.status(200).download(filePath);
-        res.end();
+        let where = path.resolve(__dirname + '/../' + 'public/', req.query.file_name)
+        var file = fs.createReadStream(where);
+        file.pipe(res);
     })
 
     return router;
