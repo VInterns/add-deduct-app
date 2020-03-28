@@ -7,6 +7,8 @@ import {
     TeamBody,
     TeamTable
 } from "../components";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export class Team extends React.Component {
     constructor(props) {
@@ -40,9 +42,11 @@ export class Team extends React.Component {
             })
         })
             .then(res => {
+                toast.success("Data successfully submitted.")
                 return console.log(res)
             })
             .catch(err => {
+                toast.error("Data couldn't be submitted.")
                 throw err;
             })
     }
@@ -63,6 +67,7 @@ export class Team extends React.Component {
                         bodyArray={this.state.excelData}
                         totalCount={this.state.totalCount}
                     />
+                    <ToastContainer/>
                 </div>
             </Container>
         );
