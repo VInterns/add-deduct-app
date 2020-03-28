@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import {
     Button,
     Icon,
@@ -24,6 +23,3 @@ export const HRTeamBody = (props) => {
     )
 }
 
-HRTeamBody.propTypes = {
-    handleClick: PropTypes.func.isRequired
-}
