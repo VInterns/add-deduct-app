@@ -29,7 +29,7 @@ const FILES = [
 export const HRTeam = props => {
   return (
     <Container fluid className="bg-light p-5" style={{ height: "160vh" }}>
-      <div className="offset-md-2 col-md-8 border bg-white rounded p-5">
+      <div className="offset-md-1 col-md-10 border bg-white rounded p-5">
         <TeamHeader team={props.teamName} />
         <HRTeamBody />
         <HRTeamTable body={FILES} header={props.tableHeader} />
