@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { PenaltiesDetailedTeam } from "../teams";
+import { PDT } from "../teams";
 
 export const PenaltiesDetailedScreen = () => {
     return (
         <Team
-            teamName={PenaltiesDetailedTeam.NAME}
-            filePath={PenaltiesDetailedTeam.SAMPLE_EXCEL_URL}
-            collection={PenaltiesDetailedTeam.COLLECTION_NAME}
-            tableHeader={PenaltiesDetailedTeam.TABLE_HEADER}
+            teamName={PDT.NAME}
+            filePath={PDT.SAMPLE_EXCEL_URL}
+            collection={PDT.COLLECTION_NAME}
+            tableHeader={PDT.TABLE_HEADER}
         />
     );
 } 

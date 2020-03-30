@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { SickLeaveConsTeam } from "../teams";
+import { SLCT } from "../teams";
 
 export const SickLeaveConsScreen = () => {
     return (
         <Team
-            teamName={SickLeaveConsTeam.NAME}
-            filePath={SickLeaveConsTeam.SAMPLE_EXCEL_URL}
-            collection={SickLeaveConsTeam.COLLECTION_NAME}
-            tableHeader={SickLeaveConsTeam.TABLE_HEADER}
+            teamName={SLCT.NAME}
+            filePath={SLCT.SAMPLE_EXCEL_URL}
+            collection={SLCT.COLLECTION_NAME}
+            tableHeader={SLCT.TABLE_HEADER}
         />
     );
 } 

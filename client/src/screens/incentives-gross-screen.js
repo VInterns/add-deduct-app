@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { IncentivesGrossTeam } from "../teams";
+import { IGT } from "../teams";
 
 export const IncentivesGrossScreen = () => {
     return (
         <Team
-            teamName={IncentivesGrossTeam.NAME}
-            filePath={IncentivesGrossTeam.SAMPLE_EXCEL_URL}
-            collection={IncentivesGrossTeam.COLLECTION_NAME}
-            tableHeader={IncentivesGrossTeam.TABLE_HEADER}
+            teamName={IGT.NAME}
+            filePath={IGT.SAMPLE_EXCEL_URL}
+            collection={IGT.COLLECTION_NAME}
+            tableHeader={IGT.TABLE_HEADER}
         />
     );
 } 

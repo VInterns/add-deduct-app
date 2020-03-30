@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { NoShowsTeam } from "../teams";
+import { NST } from "../teams";
 
 export const NoShowsScreen = () => {
     return (
         <Team
-            teamName={NoShowsTeam.NAME}
-            filePath={NoShowsTeam.SAMPLE_EXCEL_URL}
-            collection={NoShowsTeam.COLLECTION_NAME}
-            tableHeader={NoShowsTeam.TABLE_HEADER}
+            teamName={NST.NAME}
+            filePath={NST.SAMPLE_EXCEL_URL}
+            collection={NST.COLLECTION_NAME}
+            tableHeader={NST.TABLE_HEADER}
         />
     );
 } 

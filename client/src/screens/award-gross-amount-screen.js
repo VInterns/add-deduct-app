@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { AwardGrossAmountTeam } from "../teams";
+import { AGAT } from "../teams";
 
 export const AwardGrossAmountScreen = () => {
     return (
         <Team
-            teamName={AwardGrossAmountTeam.NAME}
-            filePath={AwardGrossAmountTeam.SAMPLE_EXCEL_URL}
-            collection={AwardGrossAmountTeam.COLLECTION_NAME}
-            tableHeader={AwardGrossAmountTeam.TABLE_HEADER}
+            teamName={AGAT.NAME}
+            filePath={AGAT.SAMPLE_EXCEL_URL}
+            collection={AGAT.COLLECTION_NAME}
+            tableHeader={AGAT.TABLE_HEADER}
         />
     );
 } 

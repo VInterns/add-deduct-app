@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { LostHoursTeam } from "../teams";
+import { LHT } from "../teams";
 
 export const LostHoursScreen = () => {
     return (
         <Team
-            teamName={LostHoursTeam.NAME}
-            filePath={LostHoursTeam.SAMPLE_EXCEL_URL}
-            collection={LostHoursTeam.COLLECTION_NAME}
-            tableHeader={LostHoursTeam.TABLE_HEADER}
+            teamName={LHT.NAME}
+            filePath={LHT.SAMPLE_EXCEL_URL}
+            collection={LHT.COLLECTION_NAME}
+            tableHeader={LHT.TABLE_HEADER}
         />
     )
 }

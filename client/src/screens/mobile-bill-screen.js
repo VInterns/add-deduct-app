@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { MobileBillTeam } from "../teams";
+import { MBT } from "../teams";
 
 export const MobileBillScreen = () => {
     return (
         <Team
-            teamName={MobileBillTeam.NAME}
-            filePath={MobileBillTeam.SAMPLE_EXCEL_URL}
-            collection={MobileBillTeam.COLLECTION_NAME}
-            tableHeader={MobileBillTeam.TABLE_HEADER}
+            teamName={MBT.NAME}
+            filePath={MBT.SAMPLE_EXCEL_URL}
+            collection={MBT.COLLECTION_NAME}
+            tableHeader={MBT.TABLE_HEADER}
         />
     );
 } 

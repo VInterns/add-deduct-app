@@ -1,14 +1,14 @@
 import React from "react";
 import { Team } from "../components";
-import { GYMTeam } from "../teams";
+import { GYMT } from "../teams";
 
 export const GYMScreen = () => {
     return (
         <Team
-            teamName={GYMTeam.NAME}
-            filePath={GYMTeam.SAMPLE_EXCEL_URL}
-            collection={GYMTeam.COLLECTION_NAME}
-            tableHeader={GYMTeam.TABLE_HEADER}
+            teamName={GYMT.NAME}
+            filePath={GYMT.SAMPLE_EXCEL_URL}
+            collection={GYMT.COLLECTION_NAME}
+            tableHeader={GYMT.TABLE_HEADER}
         />
     );
 } 
