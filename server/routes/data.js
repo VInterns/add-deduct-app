@@ -1,5 +1,3 @@
-const fs = require("fs");
-const path = require("path");
 const { Router } = require("express");
 const { normalizeData } = require("../util");
 const { exportExcel } = require("../services/file");
@@ -21,7 +19,7 @@ module.exports = db => {
     // replace number keys with the actual keys
     let normalized = normalizeData(data[0], data.slice(1));
 
-    db.collection(collection).insertMany(normalized, function(err, result) {
+    db.collection(collection).insertMany(normalized, function (err, result) {
       if (err) {
         console.error(err);
         throw err;
@@ -37,15 +35,20 @@ module.exports = db => {
   });
 
   // API: EXPORT DATA
-  // TODO:
-  //    - Get data from db and create excel on the fly in react and download it to the user
-  router.get("/export_data", (req, res) => {
-    let where = path.resolve(
-      __dirname + "/../" + "public/",
-      req.query.file_name
-    );
-    var file = fs.createReadStream(where);
-    file.pipe(res);
+  router.get("/export_data/:collection", (req, res) => {
+    let collection = req.params.collection;
+    db.collection(collection)
+      .find({})
+      .toArray((err, resultArray) => {
+        if (err) {
+          console.error(err);
+          throw err;
+        }
+        res
+          .status(200)
+          .json(resultArray)
+          .end();
+      })
   });
 
   return router;
