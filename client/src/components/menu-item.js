@@ -60,7 +60,6 @@ export class MenuItem extends React.Component {
     }
 }
 
-
 MenuItem.propTypes = {
     paneHeader: PropTypes.string.isRequired,
     fileName: PropTypes.string.isRequired,
