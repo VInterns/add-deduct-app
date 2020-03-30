@@ -15,10 +15,10 @@ export const PaneContent = (props) => {
                     table='data-table'
                     filename={paneFile}
                     sheet='Sheet1'
-                    buttonText='Download as XLS'
+                    buttonText='Export Table as XLS'
                 />
             </div>
-            <Table id='data-table' celled striped>
+            <Table id='data-table' celled>
                 <Table.Header>
                     <Table.Row>
                         <TeamTableHeader header={tableKeys} />
