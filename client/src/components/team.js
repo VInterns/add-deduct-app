@@ -2,7 +2,7 @@ import React from "react";
 import _ from 'lodash';
 import PropTypes from "prop-types";
 import { SUBMIT_DATA_API } from "../api";
-import { Container, Icon } from "semantic-ui-react";
+import { Container } from "semantic-ui-react";
 import { TeamHeader, TeamBody, TeamTable } from "../components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -57,22 +57,19 @@ export class Team extends React.Component {
         })
       }).then(() => {
         toast.success("Data successfully submitted.", {
-          className: "bg-white font-weight-bold text-success",
-          progressClassName: 'progress-bar bg-success',
-          closeButton: <Icon name='close' color='green' />
+          className: "bg-success font-weight-bold",
+          progressClassName: 'progress-bar bg-white'
         });
       }).catch(err => {
         toast.error("Failed to submit data to db." + err, {
-          className: "bg-white rounded font-weight-bold text-danger",
-          progressClassName: 'progress-bar bg-danger',
-          closeButton: <Icon name='close' color='green' />
+          className: "bg-danger rounded font-weight-bold",
+          progressClassName: 'progress-bar bg-white'
         });
       });
     } else {
       toast.error("Data won't be submitted, wrong file has been uploaded.", {
-        className: "bg-white font-weight-bold text-danger",
-        progressClassName: 'progress-bar bg-danger',
-        closeButton: <Icon name='close' color='red' />
+        className: "bg-danger rounded font-weight-bold",
+        progressClassName: 'progress-bar bg-white'
       })
     }
   }
