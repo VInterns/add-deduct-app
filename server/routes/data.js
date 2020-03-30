@@ -38,7 +38,7 @@ module.exports = db => {
   router.get("/export_data/:collection", (req, res) => {
     let collection = req.params.collection;
     db.collection(collection)
-      .find({})
+      .find({}, { fields: { _id: 0 } })
       .toArray((err, resultArray) => {
         if (err) {
           console.error(err);
