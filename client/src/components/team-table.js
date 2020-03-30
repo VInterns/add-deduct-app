@@ -9,6 +9,8 @@ import {
 
 export class TeamTable extends React.Component {
     render() {
+        let { totalCount, headerArray, bodyArray } = this.props;
+        let rows = bodyArray.slice(1);
         return (
             <div className="p-3">
                 <div className='row'>
@@ -16,16 +18,16 @@ export class TeamTable extends React.Component {
                         limit={'10'}
                         onChangeHandler={this.limitHandler}
                     />
-                    {"  Total Count: " + this.props.totalCount}
+                    {"  Total Count: " + totalCount}
                 </div>
                 <Table celled>
                     <Table.Header>
                         <Table.Row>
-                            <TeamTableHeader header={this.props.headerArray} />
+                            <TeamTableHeader header={headerArray} />
                         </Table.Row>
                     </Table.Header>
                     <Table.Body>
-                        <TeamTableBody rows={this.props.bodyArray} />
+                        <TeamTableBody rows={rows} />
                     </Table.Body>
                 </Table>
             </div>
@@ -36,4 +38,5 @@ export class TeamTable extends React.Component {
 TeamTable.propTypes = {
     headerArray: PropTypes.array.isRequired,
     bodyArray: PropTypes.array.isRequired,
+    totalCount: PropTypes.number.isRequired
 }
