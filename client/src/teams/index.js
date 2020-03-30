@@ -9,7 +9,7 @@ const OT = {
     "NAME": "Overtime",
     "COLLECTION_NAME": "overtime",
     "TABLE_HEADER": ["Vendor", "ID", "Name", "Overtime Hours", "Logged Out"],
-    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/b4cf280ca20790b58db1d2ab05ac4195/samples-overtime.xlsx"
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/d2eee929f441939bdbbcd2f60620d069/samples-overtime.xlsx"
 
 }
 
@@ -100,7 +100,7 @@ const UKDET = {
 const AGAT = {
     "NAME": "Award Gross Amount",
     "COLLECTION_NAME": "award-gross-amount",
-    "TABLE_HEADER": ["Vendor", "Staff ID", "Names", "Amount of Rewards"],
+    "TABLE_HEADER": ["Vendor", "Staff ID", "Names", "Amount of Reward"],
     "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/96720131e78b3b4c571d677086cc2546/samples-award-gross-amount.xlsx"
 }
 
@@ -115,7 +115,7 @@ const PDT = {
     "NAME": "Penalties Detailed",
     "COLLECTION_NAME": "penalties-detailed",
     "TABLE_HEADER": ["Vendor", "ID", "Violater Name", "Violation Type", "Incident Details", "Incident Date", "Penalty Applied", "Penalty Receiving Date"],
-    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/e19683cf5415fbffe9b7722b3f67478a/samples-penalties-detailed.xlsx"
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/61cc012b546cce479b37758769218c0d/samples-penalties-detailed.xlsx"
 }
 
 const OCT = {
@@ -129,7 +129,7 @@ const PCT = {
     "NAME": "Profile Change",
     "COLLECTION_NAME": "profile-change",
     "TABLE_HEADER": ["ID", "Vendor", "Name", "Effective Date", "Account", "New Basic", "New GB", "New Total"],
-    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/b55869408be41dbe3f96b3d8421512ec/samples-profile-change.xlsx"
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e6f7b3e6701140739e1f29d/30a0b4aa887a99d3efead9dd832c7ec3/samples-profile-change.xlsx"
 }
 
 module.exports = {
