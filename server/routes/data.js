@@ -8,8 +8,6 @@ module.exports = db => {
   let router = new Router();
 
   // API: IMPORT DATA
-  // TODO:
-  //    - Validate based on each header
   router.post("/submit_data", (req, res) => {
     let data = req.body.what_to_submit;
     let collection = req.body.where_to_submit;
