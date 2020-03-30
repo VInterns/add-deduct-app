@@ -1,7 +1,8 @@
 import React from "react";
+import _ from 'lodash';
 import PropTypes from "prop-types";
 import { SUBMIT_DATA_API } from "../api";
-import { Container } from "semantic-ui-react";
+import { Container, Icon } from "semantic-ui-react";
 import { TeamHeader, TeamBody, TeamTable } from "../components";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -18,10 +19,26 @@ export class Team extends React.Component {
   }
 
   dataDisplayHandler(data) {
-    this.setState({
-      excelData: data,
-      totalCount: data.length - 1
-    });
+    let { tableHeader } = this.props;
+    let header = tableHeader.map(value => {
+      return _.camelCase(value);
+    })
+
+    if (JSON.stringify(data[0]) === JSON.stringify(header)) {
+      toast.success("Your file has been uploaded.", {
+        className: "bg-success font-weight-bold",
+        progressClassName: 'progress-bar bg-white'
+      })
+      this.setState({
+        excelData: data,
+        totalCount: data.length - 1
+      });
+    } else {
+      toast.error("Wrong file. Please use the file provided in the Before Upload section.", {
+        className: "bg-danger rounded font-weight-bold",
+        progressClassName: 'progress-bar bg-white'
+      })
+    }
   }
 
   submitTableHandler(event) {
@@ -29,30 +46,41 @@ export class Team extends React.Component {
     let collectionName = this.props.collection;
     let data = this.state.excelData;
 
-    fetch(SUBMIT_DATA_API, {
-      headers: { "Content-Type": "application/json" },
-      method: "post",
-      body: JSON.stringify({
-        what_to_submit: data,
-        where_to_submit: collectionName
-      })
-    })
-      .then(res => {
-        toast.success("Data successfully submitted.");
-        // TODO:
-        //      -Remove consoles
-        return console.log(res);
-      })
-      .catch(err => {
-        toast.error("Data couldn't be submitted.");
-        throw err;
+    // prevent submit when wrong file if chosen
+    if (data.length > 0) {
+      fetch(SUBMIT_DATA_API, {
+        headers: { "Content-Type": "application/json" },
+        method: "post",
+        body: JSON.stringify({
+          what_to_submit: data,
+          where_to_submit: collectionName
+        })
+      }).then(() => {
+        toast.success("Data successfully submitted.", {
+          className: "bg-white font-weight-bold text-success",
+          progressClassName: 'progress-bar bg-success',
+          closeButton: <Icon name='close' color='green' />
+        });
+      }).catch(err => {
+        toast.error("Failed to submit data to db." + err, {
+          className: "bg-white rounded font-weight-bold text-danger",
+          progressClassName: 'progress-bar bg-danger',
+          closeButton: <Icon name='close' color='green' />
+        });
       });
+    } else {
+      toast.error("Data won't be submitted, wrong file has been uploaded.", {
+        className: "bg-white font-weight-bold text-danger",
+        progressClassName: 'progress-bar bg-danger',
+        closeButton: <Icon name='close' color='red' />
+      })
+    }
   }
 
   render() {
     return (
       <Container fluid className="bg-light p-5" style={{ height: "100vh" }}>
-        <div className="offset-md-2 col-md-8 border bg-white rounded p-5">
+        <div className="offset-md-1 col-md-10 border bg-white rounded p-5">
           <TeamHeader team={this.props.teamName} />
           <TeamBody
             team={this.props.teamName}
