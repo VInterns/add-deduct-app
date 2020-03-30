@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const { normalizeData } = require("../util");
-const { exportExcel } = require("../services/file");
 
 //TODO: Roles to be created and assign to each to his own endpoint.
 
@@ -22,12 +21,10 @@ module.exports = db => {
         console.error(err);
         throw err;
       } else {
-        exportExcel(collection, normalized);
-        return res
+        res
           .status(200)
-          .send(
-            `${result.insertedCount} record(s) successfully inserted into ${collection}.`
-          );
+          .send(`${result.insertedCount} record(s) successfully inserted into ${collection}.`)
+          .end();
       }
     });
   });
