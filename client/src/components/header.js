@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { Nav, Navbar, Image } from "react-bootstrap";
 import { bindActionCreators } from "redux";
+import { Icon } from "semantic-ui-react";
 import Logo from "../assets/images/logo-wht.png";
 
 import { logout } from "../state";
@@ -45,7 +46,7 @@ export class Header extends React.Component {
   }
 
   checkAuth = (allowed_users, user_roles) => {
-    const found = allowed_users.some(r => user_roles.indexOf(r) >= 0);
+    const found = allowed_users.some(r => user_roles.indexOf(r) > 0);
     return found;
   };
 
@@ -56,10 +57,10 @@ export class Header extends React.Component {
     return (
       <Navbar style={{ backgroundColor: "#db2828" }} variant="dark">
         <Navbar.Brand>
-          <Image src={Logo} style={{height: "50px", width:"50px"}} rounded/>
+          <Image src={Logo} style={{ height: "50px", width: "50px" }} rounded />
           <label className='font-weight-bold'>Leaver App</label>
         </Navbar.Brand>
-        <Nav className="mr-auto">
+        <Nav className="mr-auto font-weight-bold">
           {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
             <Nav.Link href="/upload_employees">Upload Employees</Nav.Link>
           )}
@@ -124,7 +125,7 @@ export class Header extends React.Component {
             <Nav.Link href="/profile_change">Profile Change</Nav.Link>
           )}
         </Nav>
-        <Nav className="justify-content-end" activeKey="/home">
+        <Nav className="justify-content-end font-weight-bold" activeKey="/home">
           {this.checkAuth(
             this.state.hrUsers,
             this.props.account.roles
@@ -135,7 +136,7 @@ export class Header extends React.Component {
               this.props.logout();
             }}
           >
-            Logout
+            <Icon name="log out" size="large" inverted/>
           </Nav.Link>
         </Nav>
       </Navbar>
