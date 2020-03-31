@@ -9,7 +9,25 @@ const renameKeys = (keysMap, obj) =>
     {}
   );
 
-const normalizeData = (keys, data) => {
+const getSubmissionDate = () => {
+
+  // New Date Object
+  let submissionDate = new Date(Date.now());
+
+  let date = ("0" + submissionDate.getDate()).slice(-2);
+  let month = ("0" + (submissionDate.getMonth() + 1)).slice(-2);
+  let year = submissionDate.getFullYear();
+  let hours = submissionDate.getHours();
+  let minutes = submissionDate.getMinutes();
+
+  let submitDate = date + '-' + month + '-' + year;
+  let submitTime = hours + ':' + minutes;
+  let submittedAt = submitDate + ' @ ' + submitTime;
+  
+  return submittedAt;
+}
+
+const normalizeData = (keys, data, user) => {
   // 1: convert array of arrays to array of objects
   let converted = data.map(entry => {
     return _.toPlainObject(entry);
@@ -20,7 +38,14 @@ const normalizeData = (keys, data) => {
     return renameKeys(keys, entry);
   });
 
-  return replaced;
+  // 3: add last submitted by and when
+  let normalized = replaced.map(entry => {
+    entry['submittedBy'] = user.username;
+    entry['submittedAt'] = getSubmissionDate();
+    return entry;
+  })
+
+  return normalized;
 };
 
 module.exports = {
