@@ -5,8 +5,8 @@ import { TeamHeader, HRTeamTable } from "../components";
 
 export const HRTeam = (props) => {
   return (
-    <Container fluid className="bg-light p-5" style={{ height: "160vh" }}>
-      <div className="offset-md-1 col-md-10 border bg-white rounded p-5">
+    <Container fluid className="bg-white" style={{ height: "160vh", width: "100%" }}>
+      <div className="bg-white p-5">
         <TeamHeader team={props.teamName} />
         <HRTeamTable header={props.tableHeader} />
       </div>
