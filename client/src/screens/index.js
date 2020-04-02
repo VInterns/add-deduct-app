@@ -1,24 +1,31 @@
-export * from './users-insert-screen';
-export * from './employees-insert-screen';
-export * from './authentication-screen';
-export * from './registration-screen';
-export * from './salary-adjust-screen';
-export * from './overtime-screen';
-export * from './net-expenses-screen';
-export * from './night-shift-amount-days-screen';
-export * from './lost-hours-screen';
-export * from './overtime-reward-gross-screen';
-export * from './no-show-detailed-screen';
-export * from './no-shows-screen';
-export * from './incentives-gross-screen';
-export * from './incentives-net-screen';
-export * from './mobile-bill-screen';
-export * from './sick-leave-detailed-screen';
-export * from './sick-leave-cons-screen';
-export * from './ukde-referral-screen';
-export * from './award-gross-amount-screen';
-export * from './gym-screen';
-export * from './penalties-detailed-screen';
-export * from './on-call-screen';
-export * from './profile-change-screen';
-export * from './hr-screen';
+/* Sign in & up  */
+export * from './AuthenticationScreen';
+export * from './RegistrationScreen';
+
+/* Upload Users & Employees*/
+export * from './UploadUsersScreen';
+export * from './UploadEmployeesScreen';
+
+/* Function Teams */
+export * from './SalaryAdjustScreen';
+export * from './OvertimeScreen';
+export * from './NetExpensesScreen';
+export * from './NightShiftAmountDaysScreen';
+export * from './LostHoursScreen';
+export * from './OvertimeRewardGrossScreen';
+export * from './NoShowDetailedScreen';
+export * from './NoShowsScreen';
+export * from './IncentivesGrossScreen';
+export * from './IncentivesNetScreen';
+export * from './MobileBillScreen';
+export * from './SickLeaveDetailedScreen';
+export * from './SickLeaveConsScreen';
+export * from './UKDEReferralScreen';
+export * from './AwardGrossAmountScreen';
+export * from './GYMScreen';
+export * from './PenaltiesDetailedScreen';
+export * from './OnCallScreen';
+export * from './ProfileChangeScreen';
+
+/* HR Team */
+export * from './HRScreen';
