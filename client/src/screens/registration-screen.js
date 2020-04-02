@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import { SignupForm } from "../components/signup-form";
+import { SignupForm } from "../components";
 import { signup, sendCode, verifyCode, initializeApp } from "../state";
 
 class registrationContainer extends Component {

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { Table } from "semantic-ui-react";
-import { TeamTableHeader, TeamTableBody } from "../components";
+import { TeamTableHeader, TeamTableBody } from ".";
 
 export const PaneContent = (props) => {
     let { paneFile, tableKeys, tableData } = props;

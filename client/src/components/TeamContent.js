@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { TeamBodyNotice, TeamBodyUpload } from "../components";
 import { Divider, Button } from "semantic-ui-react";
 
-export class TeamBody extends React.Component {
+export class TeamContent extends React.Component {
 
     constructor(props) {
         super(props);
@@ -47,7 +47,7 @@ export class TeamBody extends React.Component {
     }
 }
 
-TeamBody.propTypes = {
+TeamContent.propTypes = {
     team: PropTypes.string.isRequired,
     file: PropTypes.string.isRequired,
     displayData: PropTypes.func.isRequired,
