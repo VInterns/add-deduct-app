@@ -30,7 +30,7 @@ export class Team extends React.Component {
       })
 
       this.setState({
-        excelData: data.slice(1),
+        excelData: data,
         totalCount: data.slice(1).length
       });
     } else {
