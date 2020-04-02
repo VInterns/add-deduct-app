@@ -19,17 +19,20 @@ export class TeamTable extends React.Component {
 
     static getDerivedStateFromProps(props, state) {
 
+        let { bodyArray, pageSize } = props;
+        let { dataPerPage, activePage } = state;
+
         // Table first page data
-        if (state.activePage === 1) {
-            if (props.bodyArray !== state.dataPerPage) {
-                let initialData = props.bodyArray.slice(0, props.pageSize);
+        if (activePage === 1) {
+            if (bodyArray !== dataPerPage) {
+                let removeKeys = bodyArray.slice(1)
+                let initialData = removeKeys.slice(0, pageSize);
                 return { dataPerPage: initialData };
             }
         }
-        else {
-            let { bodyArray, pageSize } = props;
-            let start = (pageSize) * (state.activePage - 1);
-            let end = pageSize * state.activePage;
+        else {  // Other pages data
+            let start = (pageSize) * (activePage - 1);
+            let end = pageSize * activePage;
             let pageData = bodyArray.slice(start, end);
             return { dataPerPage: pageData };
         }
@@ -44,9 +47,8 @@ export class TeamTable extends React.Component {
         let { activePage, dataPerPage } = this.state;
         let { bodyArray, headerArray, pageSize, totalCount } = this.props;
         let colSpan = headerArray.length;
-        
+
         if (bodyArray.length !== 0) {
-            console.log(bodyArray)
             return (
                 <div className="p-3">
                     <Table celled striped>
