@@ -14,182 +14,181 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'hr_admin_1' ,
+            username: 'hr_admin_1',
             password: bcrypt.hashSync('hradmin1', salt),
-            roles: ['admin', "hr"]
+            roles: ['hr']
         })
 
-    // Salary Adjust
+    // Salary Adjust"admin","admin",
     this.db
         .collection(collection)
         .insertOne({
-            username: 'salary_adjust_1' ,
+            username: 'salary_adjust_1',
             password: bcrypt.hashSync('salary1', salt),
-            roles: ['admin', 'salary-adjust']
+            roles: ['salary-adjust']
         })
 
     // Overtime
     this.db
         .collection(collection)
         .insertOne({
-            username: 'overtime_1' ,
+            username: 'overtime_1',
             password: bcrypt.hashSync('overtime1', salt),
-            roles: ['admin', 'overtime']
+            roles: ['overtime']
         })
 
     // Next Expense
     this.db
         .collection(collection)
         .insertOne({
-            username: 'net_expenses_1' ,
+            username: 'net_expenses_1',
             password: bcrypt.hashSync('ntxpns', salt),
-            roles: ['admin', 'net-expenses']
+            roles: ['net-expenses']
         })
 
     // Night Shift
     this.db
         .collection(collection)
         .insertOne({
-            username: 'night_shift_1' ,
+            username: 'night_shift_1',
             password: bcrypt.hashSync('nshft1', salt),
-            roles: ['admin', 'night-shift']
+            roles: ['night-shift']
         })
 
     // Lost Hours
     this.db
         .collection(collection)
         .insertOne({
-            username: 'lost_hours_1' ,
+            username: 'lost_hours_1',
             password: bcrypt.hashSync('lohrs1', salt),
-            roles: ['admin', 'lost-hours']
+            roles: ['lost-hours']
         })
 
     // Overtime Reward Gross
     this.db
         .collection(collection)
         .insertOne({
-            username: 'overtime_reward_gross_1' ,
+            username: 'overtime_reward_gross_1',
             password: bcrypt.hashSync('otrwgrs1', salt),
-            roles: ["admin", "overtime-reward-gross"]
+            roles: ['overtime-reward-gross']
         })
 
     // No Show Detailed
     this.db
         .collection(collection)
         .insertOne({
-            username: 'no_show_detailed_1' ,
+            username: 'no_show_detailed_1',
             password: bcrypt.hashSync('nshowd1', salt),
-            roles: ["admin", "no-show-detailed"]
+            roles: ['no-show-detailed']
         })
 
     // No Shows
     this.db
         .collection(collection)
         .insertOne({
-            username: 'no_shows_1' ,
+            username: 'no_shows_1',
             password: bcrypt.hashSync('nshows1', salt),
-            roles: ["admin", "no-shows"]
+            roles: ['no-shows']
         })
 
     // Incentives Gross
     this.db
         .collection(collection)
         .insertOne({
-            username: 'incentives_gross_1' ,
+            username: 'incentives_gross_1',
             password: bcrypt.hashSync('incntgrs1', salt),
-            roles: ["admin", "incentives-gross"]
+            roles: ['incentives-gross']
         })
 
     // Incentives Net
     this.db
         .collection(collection)
         .insertOne({
-            username: 'incentives_net_1' ,
+            username: 'incentives_net_1',
             password: bcrypt.hashSync('incntnet1', salt),
-            roles: ["admin", "incentives-net"]
+            roles: ['incentives-net']
         })
 
     // Mobile Bill
     this.db
         .collection(collection)
         .insertOne({
-            username: 'mobile_bill_1' ,
+            username: 'mobile_bill_1',
             password: bcrypt.hashSync('mblbl1', salt),
-            roles: ["admin", "mobile-bill"]
+            roles: ['mobile-bill']
         })
 
     // Sick Leave Detailed
     this.db
         .collection(collection)
         .insertOne({
-            username: 'sick_leave_detailed_1' ,
+            username: 'sick_leave_detailed_1',
             password: bcrypt.hashSync('sklvde1', salt),
-            roles: ["admin", "sick-leave-detailed"]
+            roles: ['sick-leave-detailed']
         })
 
     // Sick Leave Cons
     this.db
         .collection(collection)
         .insertOne({
-            username: 'sick_leave_cons_1' ,
+            username: 'sick_leave_cons_1',
             password: bcrypt.hashSync('sklvco1', salt),
-            roles: ["admin", "sick-leave-cons"]
+            roles: ['sick-leave-cons']
         })
 
     // UKDE Referral
     this.db
         .collection(collection)
         .insertOne({
-            username: 'ukde_referral_1' ,
+            username: 'ukde_referral_1',
             password: bcrypt.hashSync('ukde1', salt),
-            roles: ["admin", "ukde"]
+            roles: ['ukde']
         })
 
     // Award Gross Amount
     this.db
         .collection(collection)
         .insertOne({
-            username: 'award_gross_1' ,
+            username: 'award_gross_1',
             password: bcrypt.hashSync('awgrs1', salt),
-            roles: ["admin", "award-gross"]
+            roles: ['award-gross']
         })
 
     // Gym
     this.db
         .collection(collection)
         .insertOne({
-            username: 'gym_1' ,
+            username: 'gym_1',
             password: bcrypt.hashSync('gym_1', salt),
-            roles: ["admin", "gym"]
+            roles: ['gym']
         })
 
     // Penalties Detailed
     this.db
         .collection(collection)
         .insertOne({
-            username: 'penalties_detailed_1' ,
+            username: 'penalties_detailed_1',
             password: bcrypt.hashSync('pendet1', salt),
-            roles: ["admin", "penalties"]
+            roles: ['penalties']
         })
 
     // On Call
     this.db
         .collection(collection)
         .insertOne({
-            username: 'on_call_1' ,
+            username: 'on_call_1',
             password: bcrypt.hashSync('call1', salt),
-            roles: ["admin", "on-call"]
+            roles: ['on-call']
         })
 
     // Profile Change
     this.db
         .collection(collection)
         .insertOne({
-            username: 'profile_change_1' ,
+            username: 'profile_change_1',
             password: bcrypt.hashSync('profcha1', salt),
-            roles: ["admin", "profile"]
-        })
-        .then(() => done());
+            roles: ['profile']
+        }).then(() => done());
 
 };
 
