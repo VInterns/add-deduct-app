@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 
 let collection = 'users';
 
-module.exports.id = 'initial-users-setup';
+module.exports.id = 'more-users';
 
 module.exports.up = function (done) {
 
@@ -14,8 +14,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'hr_admin_1' ,
-            password: bcrypt.hashSync('hradmin1', salt),
+            username: 'hr_admin_2',
+            password: bcrypt.hashSync('hradmin2', salt),
             roles: ['admin', "hr"]
         })
 
@@ -23,8 +23,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'salary_adjust_1' ,
-            password: bcrypt.hashSync('salary1', salt),
+            username: 'salary_adjust_2',
+            password: bcrypt.hashSync('salary2', salt),
             roles: ['admin', 'salary-adjust']
         })
 
@@ -32,8 +32,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'overtime_1' ,
-            password: bcrypt.hashSync('overtime1', salt),
+            username: 'overtime_2',
+            password: bcrypt.hashSync('overtime2', salt),
             roles: ['admin', 'overtime']
         })
 
@@ -41,7 +41,7 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'net_expenses_1' ,
+            username: 'net_expenses_2',
             password: bcrypt.hashSync('ntxpns', salt),
             roles: ['admin', 'net-expenses']
         })
@@ -50,8 +50,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'night_shift_1' ,
-            password: bcrypt.hashSync('nshft1', salt),
+            username: 'night_shift_2',
+            password: bcrypt.hashSync('nshft2', salt),
             roles: ['admin', 'night-shift']
         })
 
@@ -59,8 +59,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'lost_hours_1' ,
-            password: bcrypt.hashSync('lohrs1', salt),
+            username: 'lost_hours_2',
+            password: bcrypt.hashSync('lohrs2', salt),
             roles: ['admin', 'lost-hours']
         })
 
@@ -68,8 +68,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'overtime_reward_gross_1' ,
-            password: bcrypt.hashSync('otrwgrs1', salt),
+            username: 'overtime_reward_gross_2',
+            password: bcrypt.hashSync('otrwgrs2', salt),
             roles: ["admin", "overtime-reward-gross"]
         })
 
@@ -77,8 +77,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'no_show_detailed_1' ,
-            password: bcrypt.hashSync('nshowd1', salt),
+            username: 'no_show_detailed_2',
+            password: bcrypt.hashSync('nshowd2', salt),
             roles: ["admin", "no-show-detailed"]
         })
 
@@ -86,8 +86,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'no_shows_1' ,
-            password: bcrypt.hashSync('nshows1', salt),
+            username: 'no_shows_2',
+            password: bcrypt.hashSync('nshows2', salt),
             roles: ["admin", "no-shows"]
         })
 
@@ -95,8 +95,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'incentives_gross_1' ,
-            password: bcrypt.hashSync('incntgrs1', salt),
+            username: 'incentives_gross_2',
+            password: bcrypt.hashSync('incntgrs2', salt),
             roles: ["admin", "incentives-gross"]
         })
 
@@ -104,8 +104,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'incentives_net_1' ,
-            password: bcrypt.hashSync('incntnet1', salt),
+            username: 'incentives_net_2',
+            password: bcrypt.hashSync('incntnet2', salt),
             roles: ["admin", "incentives-net"]
         })
 
@@ -113,8 +113,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'mobile_bill_1' ,
-            password: bcrypt.hashSync('mblbl1', salt),
+            username: 'mobile_bill_2',
+            password: bcrypt.hashSync('mblbl2', salt),
             roles: ["admin", "mobile-bill"]
         })
 
@@ -122,8 +122,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'sick_leave_detailed_1' ,
-            password: bcrypt.hashSync('sklvde1', salt),
+            username: 'sick_leave_detailed_2',
+            password: bcrypt.hashSync('sklvde2', salt),
             roles: ["admin", "sick-leave-detailed"]
         })
 
@@ -131,8 +131,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'sick_leave_cons_1' ,
-            password: bcrypt.hashSync('sklvco1', salt),
+            username: 'sick_leave_cons_2',
+            password: bcrypt.hashSync('sklvco2', salt),
             roles: ["admin", "sick-leave-cons"]
         })
 
@@ -140,8 +140,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'ukde_referral_1' ,
-            password: bcrypt.hashSync('ukde1', salt),
+            username: 'ukde_referral_2',
+            password: bcrypt.hashSync('ukde2', salt),
             roles: ["admin", "ukde"]
         })
 
@@ -149,8 +149,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'award_gross_1' ,
-            password: bcrypt.hashSync('awgrs1', salt),
+            username: 'award_gross_2',
+            password: bcrypt.hashSync('awgrs2', salt),
             roles: ["admin", "award-gross"]
         })
 
@@ -158,8 +158,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'gym_1' ,
-            password: bcrypt.hashSync('gym_1', salt),
+            username: 'gym_2',
+            password: bcrypt.hashSync('gym_2', salt),
             roles: ["admin", "gym"]
         })
 
@@ -167,8 +167,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'penalties_detailed_1' ,
-            password: bcrypt.hashSync('pendet1', salt),
+            username: 'penalties_detailed_2',
+            password: bcrypt.hashSync('pendet2', salt),
             roles: ["admin", "penalties"]
         })
 
@@ -176,8 +176,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'on_call_1' ,
-            password: bcrypt.hashSync('call1', salt),
+            username: 'on_call_2',
+            password: bcrypt.hashSync('call2', salt),
             roles: ["admin", "on-call"]
         })
 
@@ -185,8 +185,8 @@ module.exports.up = function (done) {
     this.db
         .collection(collection)
         .insertOne({
-            username: 'profile_change_1' ,
-            password: bcrypt.hashSync('profcha1', salt),
+            username: 'profile_change_2',
+            password: bcrypt.hashSync('profcha2', salt),
             roles: ["admin", "profile"]
         })
         .then(() => done());
