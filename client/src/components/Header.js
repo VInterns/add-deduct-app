@@ -4,33 +4,33 @@ import { Nav, Navbar, Image } from "react-bootstrap";
 import { bindActionCreators } from "redux";
 import { Icon } from "semantic-ui-react";
 import Logo from "../assets/images/logo-wht.png";
-
 import { logout } from "../state";
+
 export class Header extends React.Component {
   constructor() {
     super();
     this.state = {
       err: "",
-      hrUsers: ["admin", "hr"],
-      salaryAdjustmentUsers: ["admin", "salary-adjust"],
-      overtimeUsers: ["admin", "overtime"],
-      netExpensesUsers: ["admin", "net-expenses"],
-      nightShiftAmountDaysUsers: ["admin", "night-shift"],
-      lostHoursUsers: ["admin", "lost-hours"],
-      overtimeRewardGrossUsers: ["admin", "overtime-reward-gross"],
-      noShowDetailedUsers: ["admin", "no-show-detailed"],
-      noShowsUsers: ["admin", "no-shows"],
-      incentivesGrossUsers: ["admin", "incentives-gross"],
-      incentivesNetUsers: ["admin", "incentives-net"],
-      mobileBillUsers: ["admin", "mobile-bill"],
-      sickLeaveDetailedUsers: ["admin", "sick-leave-detailed"],
-      sickLeaveConsUsers: ["admin", "sick-leave-cons"],
-      ukdeReferralUsers: ["admin", "ukde"],
-      awardGrossAmountUsers: ["admin", "award-gross"],
-      gymUsers: ["admin", "gym"],
-      penaltiesDetailedUsers: ["admin", "penalties"],
-      onCallUsers: ["admin", "on-call"],
-      profileChangeUsers: ["admin", "profile"]
+      hrUsers: ["hr"],
+      salaryAdjustmentUsers: ["salary-adjust"],
+      overtimeUsers: ["overtime"],
+      netExpensesUsers: ["net-expenses"],
+      nightShiftAmountDaysUsers: ["night-shift"],
+      lostHoursUsers: ["lost-hours"],
+      overtimeRewardGrossUsers: ["overtime-reward-gross"],
+      noShowDetailedUsers: ["no-show-detailed"],
+      noShowsUsers: ["no-shows"],
+      incentivesGrossUsers: ["incentives-gross"],
+      incentivesNetUsers: ["incentives-net"],
+      mobileBillUsers: ["mobile-bill"],
+      sickLeaveDetailedUsers: ["sick-leave-detailed"],
+      sickLeaveConsUsers: ["sick-leave-cons"],
+      ukdeReferralUsers: ["ukde"],
+      awardGrossAmountUsers: ["award-gross"],
+      gymUsers: ["gym"],
+      penaltiesDetailedUsers: ["penalties"],
+      onCallUsers: ["on-call"],
+      profileChangeUsers: ["profile"]
     };
   }
 
@@ -136,7 +136,7 @@ export class Header extends React.Component {
               this.props.logout();
             }}
           >
-            <Icon name="log out" size="large" inverted/>
+            <Icon name="log out" size="large" inverted />
           </Nav.Link>
         </Nav>
       </Navbar>
