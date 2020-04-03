@@ -21,9 +21,8 @@ const appFactory = (db, sessionStoreProvider) => {
       limit: "50mb"
     })
   );
+  
   app.use(morgan("dev"));
-  app.use(express.static('public'));
-
   app.use(
     bodyParser.urlencoded({
       limit: "50mb",
