@@ -46,7 +46,7 @@ export class Header extends React.Component {
   }
 
   checkAuth = (allowed_users, user_roles) => {
-    const found = allowed_users.some(r => user_roles.indexOf(r) > 0);
+    const found = allowed_users.some(r => user_roles.indexOf(r) >= 0);
     return found;
   };
 

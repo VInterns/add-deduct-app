@@ -22,6 +22,9 @@ export class PaneContent extends React.Component {
 
         // Table first page data
         if (activePage === 1) {
+            if (tableData === null) {
+                return { dataPerPage: [] }
+            }
             if (tableData !== dataPerPage) {
                 let initialData = tableData.slice(0, pageSize);
                 return { dataPerPage: initialData };
@@ -45,9 +48,16 @@ export class PaneContent extends React.Component {
         let { activePage, pageSize, dataPerPage } = this.state;
         let { paneFile, tableKeys, tableData } = this.props;
         let colSpan = tableKeys.length;
-        let rowsCount = tableData.length;
 
-        if (tableData.length !== 0) {
+        if (tableData) {
+            let rowsCount = tableData.length;
+            if (rowsCount === 0) {
+                return (
+                    <div>
+                        No Data
+                    </div>
+                )
+            }
             return (
                 <div>
                     <div className='d-flex flex-row mt-5'>
