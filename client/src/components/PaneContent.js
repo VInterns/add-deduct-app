@@ -120,5 +120,5 @@ export class PaneContent extends React.Component {
 PaneContent.propTypes = {
     paneFile: PropTypes.string.isRequired,
     tableKeys: PropTypes.arrayOf(String).isRequired,
-    tableData: PropTypes.arrayOf(Object).isRequired
+    tableData: PropTypes.arrayOf(Object)
 }
