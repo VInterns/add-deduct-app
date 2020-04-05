@@ -12,6 +12,7 @@ module.exports = db => {
   // API: IMPORT DATA
   router.post("/submit_data",
     ensureLoggedIn,
+    ensureHasRole,
     (req, res) => {
       let user = req.user;
       let data = req.body.what_to_submit;
@@ -39,7 +40,7 @@ module.exports = db => {
   // API: EXPORT DATA
   router.get("/export_data/:collection",
     ensureLoggedIn,
-    ensureHasRole(['hr']),
+    ensureHasRole(['ADA_HR']),
     (req, res) => {
       let collection = req.params.collection;
       db.collection(collection)
