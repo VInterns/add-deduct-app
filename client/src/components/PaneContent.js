@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ReactHTMLTableToExcel from "react-html-table-to-excel";
 import { Table, Pagination, Dimmer, Loader } from "semantic-ui-react";
-import { TeamTableHeader, TeamTableBody } from ".";
+import { TeamTableHeader, TeamTableBody, NoData } from "../components";
 
 export class PaneContent extends React.Component {
 
@@ -53,8 +53,8 @@ export class PaneContent extends React.Component {
             let rowsCount = tableData.length;
             if (rowsCount === 0) {
                 return (
-                    <div>
-                        No Data
+                    <div className='mt-5'>
+                        <NoData />
                     </div>
                 )
             }
