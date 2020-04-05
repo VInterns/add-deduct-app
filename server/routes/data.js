@@ -12,7 +12,6 @@ module.exports = db => {
   // API: IMPORT DATA
   router.post("/submit_data",
     ensureLoggedIn,
-    ensureHasRole,
     (req, res) => {
       let user = req.user;
       let data = req.body.what_to_submit;
