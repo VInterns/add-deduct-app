@@ -44,7 +44,7 @@ module.exports = db => {
   router.post(
     "/bulkregister",
     ensureLoggedIn,
-    ensureHasRole(["hr"]),
+    ensureHasRole(["ADA_HR"]),
     (req, res) => {
       const emplyees_columns = [
         "staffId",
@@ -58,6 +58,7 @@ module.exports = db => {
         "mobile",
         "username"
       ];
+      console.log('hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
       const users_columns = ["username", "staffId", "roles"];
       let checker = (arr, target) => target.every(v => arr.includes(v)); //To check if all elements exist
       if (
@@ -91,14 +92,8 @@ module.exports = db => {
                     staffId,
                     signupUrl: ""
                   };
-                  let subject = `Welcome ${scope.name} to Vodafone Outsource Leaver App`;
-                  let htmlBodyPromise = getHtmlBody("signup.html", scope).then(
-                    htmlBody => {
-                      mailer.sendEmail([username], subject, htmlBody, () => {
-                        console.log(`Signup email sent to ${email}`);
-                      });
-                    }
-                  );
+                  let subject = `Welcome ${scope.name} to Vodafone Addition Deduction App`;
+                  mailer.sendEmail([username], subject);
                 }
               }
               res.status(200).end();
