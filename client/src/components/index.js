@@ -23,3 +23,4 @@ export * from './HRTeamTable';
 export * from './MenuItem';
 export * from './PaneHeader';
 export * from './PaneContent';
+export * from './NoData';
