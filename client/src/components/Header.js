@@ -4,33 +4,33 @@ import { Nav, Navbar, Image } from "react-bootstrap";
 import { bindActionCreators } from "redux";
 import { Icon } from "semantic-ui-react";
 import Logo from "../assets/images/logo-wht.png";
-
 import { logout } from "../state";
+
 export class Header extends React.Component {
   constructor() {
     super();
     this.state = {
       err: "",
-      hrUsers: ["admin", "hr"],
-      salaryAdjustmentUsers: ["admin", "salary-adjust"],
-      overtimeUsers: ["admin", "overtime"],
-      netExpensesUsers: ["admin", "net-expenses"],
-      nightShiftAmountDaysUsers: ["admin", "night-shift"],
-      lostHoursUsers: ["admin", "lost-hours"],
-      overtimeRewardGrossUsers: ["admin", "overtime-reward-gross"],
-      noShowDetailedUsers: ["admin", "no-show-detailed"],
-      noShowsUsers: ["admin", "no-shows"],
-      incentivesGrossUsers: ["admin", "incentives-gross"],
-      incentivesNetUsers: ["admin", "incentives-net"],
-      mobileBillUsers: ["admin", "mobile-bill"],
-      sickLeaveDetailedUsers: ["admin", "sick-leave-detailed"],
-      sickLeaveConsUsers: ["admin", "sick-leave-cons"],
-      ukdeReferralUsers: ["admin", "ukde"],
-      awardGrossAmountUsers: ["admin", "award-gross"],
-      gymUsers: ["admin", "gym"],
-      penaltiesDetailedUsers: ["admin", "penalties"],
-      onCallUsers: ["admin", "on-call"],
-      profileChangeUsers: ["admin", "profile"]
+      hrUsers: ["ADA_HR"],
+      salaryAdjustmentUsers: ["ADA_SA"],
+      overtimeUsers: ["ADA_OVT"],
+      netExpensesUsers: ["ADA_NEX"],
+      nightShiftAmountDaysUsers: ["ADA_NSAD"],
+      lostHoursUsers: ["ADA_LH"],
+      overtimeRewardGrossUsers: ["ADA_ORG"],
+      noShowDetailedUsers: ["ADA_NSHD"],
+      noShowsUsers: ["ADA_NSH"],
+      incentivesGrossUsers: ["ADA_IG"],
+      incentivesNetUsers: ["ADA_IN"],
+      mobileBillUsers: ["ADA_MB"],
+      sickLeaveDetailedUsers: ["ADA_SLD"],
+      sickLeaveConsUsers: ["ADA_SLC"],
+      ukdeReferralUsers: ["ADA_UKDE"],
+      awardGrossAmountUsers: ["ADA_AGA"],
+      gymUsers: ["ADA_GYM"],
+      penaltiesDetailedUsers: ["ADA_PD"],
+      onCallUsers: ["ADA_OC"],
+      profileChangeUsers: ["ADA_PC"]
     };
   }
 
@@ -46,7 +46,7 @@ export class Header extends React.Component {
   }
 
   checkAuth = (allowed_users, user_roles) => {
-    const found = allowed_users.some(r => user_roles.indexOf(r) > 0);
+    const found = allowed_users.some(r => user_roles.indexOf(r) >= 0);
     return found;
   };
 
@@ -136,7 +136,7 @@ export class Header extends React.Component {
               this.props.logout();
             }}
           >
-            <Icon name="log out" size="large" inverted/>
+            <Icon name="log out" size="large" inverted />
           </Nav.Link>
         </Nav>
       </Navbar>
