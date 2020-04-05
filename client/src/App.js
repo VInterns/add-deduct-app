@@ -119,116 +119,116 @@ class App extends Component {
                   )}
                 />
                 <ConnectedPrivateRoute
-                  allowed={["hr"]}
+                  allowed={["ADA_HR"]}
                   path="/hr"
                   exact
                   component={HRScreen}
                 />
                 <ConnectedPrivateRoute
-                  allowed={["hr"]}
+                  allowed={["ADA_HR"]}
                   path="/upload_users"
                   exact
                   component={UploadUsersScreen}
                 />
                 <ConnectedPrivateRoute
-                  allowed={["hr"]}
+                  allowed={["ADA_HR"]}
                   path="/upload_employees"
                   exact
                   component={UploadEmployeesScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/salary_adjust"
-                  allowed={["salary-adjust"]}
+                  allowed={["ADA_SA"]}
                   component={SalaryAdjustmentScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/overtime"
-                  allowed={["overtime"]}
+                  allowed={["ADA_OVT"]}
                   component={OvertimeScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/net_expenses"
-                  allowed={["net-expenses"]}
+                  allowed={["ADA_NEX"]}
                   component={NetExpensesScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/night_shift_amount_days"
-                  allowed={["night-shift"]}
+                  allowed={["ADA_NSAD"]}
                   component={NightShiftAmountDaysScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/lost_hours"
-                  allowed={["lost-hours"]}
+                  allowed={["ADA_LH"]}
                   component={LostHoursScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/overtime_reward_gross"
-                  allowed={["overtime-reward-gross"]}
+                  allowed={["ADA_ORG"]}
                   component={OvertimeRewardGrossScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/no_show_detailed"
-                  allowed={["no-show-detailed"]}
+                  allowed={["ADA_NSHD"]}
                   component={NoShowDetailedScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/no_shows"
-                  allowed={["no-shows"]}
+                  allowed={["ADA_NSH"]}
                   component={NoShowsScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/incentives_gross"
-                  allowed={["incentives-gross"]}
+                  allowed={["ADA_IG"]}
                   component={IncentivesGrossScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/incentives_net"
-                  allowed={["incentives-net"]}
+                  allowed={["ADA_IN"]}
                   component={IncentivesNetScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/mobile_bill"
-                  allowed={["mobile-bill"]}
+                  allowed={["ADA_MB"]}
                   component={MobileBillScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/sick_leave_detailed"
-                  allowed={["sick-leave-detailed"]}
+                  allowed={["ADA_SLD"]}
                   component={SickLeaveDetailedScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/sick_leave_cons"
-                  allowed={["sick-leave-cons"]}
+                  allowed={["ADA_SLC"]}
                   component={SickLeaveConsScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/ukde_referral"
-                  allowed={["ukde"]}
+                  allowed={["ADA_UKDE"]}
                   component={UKDEReferralProgNetAmountScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/award_gross_amount"
-                  allowed={["award-gross"]}
+                  allowed={["ADA_AGA"]}
                   component={AwardGrossAmountScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/gym"
-                  allowed={["gym"]}
+                  allowed={["ADA_GYM"]}
                   component={GYMScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/penalties_detailed"
-                  allowed={["penalties"]}
+                  allowed={["ADA_PD"]}
                   component={PenaltiesDetailedScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/on_call"
-                  allowed={["on-call"]}
+                  allowed={["ADA_OC"]}
                   component={OnCallScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/profile_change"
-                  allowed={["profile"]}
+                  allowed={["ADA_PC"]}
                   component={ProfileChangeScreen}
                 />
               </Switch>

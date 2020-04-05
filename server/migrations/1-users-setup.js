@@ -16,7 +16,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'hr_admin_1',
             password: bcrypt.hashSync('hradmin1', salt),
-            roles: ['hr']
+            roles: ['ADA_HR']
         })
 
     // Salary Adjustment
@@ -25,7 +25,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'salary_adjust_1',
             password: bcrypt.hashSync('salary1', salt),
-            roles: ['salary-adjust']
+            roles: ['ADA_SA']
         })
 
     // Overtime
@@ -34,7 +34,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'overtime_1',
             password: bcrypt.hashSync('overtime1', salt),
-            roles: ['overtime']
+            roles: ['ADA_OVT']
         })
 
     // Next Expense
@@ -43,7 +43,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'net_expenses_1',
             password: bcrypt.hashSync('ntxpns', salt),
-            roles: ['net-expenses']
+            roles: ['ADA_NEX']
         })
 
     // Night Shift
@@ -52,7 +52,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'night_shift_1',
             password: bcrypt.hashSync('nshft1', salt),
-            roles: ['night-shift']
+            roles: ['ADA_NSAD']
         })
 
     // Lost Hours
@@ -61,7 +61,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'lost_hours_1',
             password: bcrypt.hashSync('lohrs1', salt),
-            roles: ['lost-hours']
+            roles: ['ADA_LH']
         })
 
     // Overtime Reward Gross
@@ -70,7 +70,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'overtime_reward_gross_1',
             password: bcrypt.hashSync('otrwgrs1', salt),
-            roles: ['overtime-reward-gross']
+            roles: ['ADA_ORG']
         })
 
     // No Show Detailed
@@ -79,7 +79,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'no_show_detailed_1',
             password: bcrypt.hashSync('nshowd1', salt),
-            roles: ['no-show-detailed']
+            roles: ['ADA_NSHD']
         })
 
     // No Shows
@@ -88,7 +88,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'no_shows_1',
             password: bcrypt.hashSync('nshows1', salt),
-            roles: ['no-shows']
+            roles: ['ADA_NSH']
         })
 
     // Incentives Gross
@@ -97,7 +97,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'incentives_gross_1',
             password: bcrypt.hashSync('incntgrs1', salt),
-            roles: ['incentives-gross']
+            roles: ['ADA_IG']
         })
 
     // Incentives Net
@@ -106,7 +106,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'incentives_net_1',
             password: bcrypt.hashSync('incntnet1', salt),
-            roles: ['incentives-net']
+            roles: ['ADA_IN']
         })
 
     // Mobile Bill
@@ -115,7 +115,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'mobile_bill_1',
             password: bcrypt.hashSync('mblbl1', salt),
-            roles: ['mobile-bill']
+            roles: ['ADA_MB']
         })
 
     // Sick Leave Detailed
@@ -124,7 +124,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'sick_leave_detailed_1',
             password: bcrypt.hashSync('sklvde1', salt),
-            roles: ['sick-leave-detailed']
+            roles: ['ADA_SLD']
         })
 
     // Sick Leave Cons
@@ -133,7 +133,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'sick_leave_cons_1',
             password: bcrypt.hashSync('sklvco1', salt),
-            roles: ['sick-leave-cons']
+            roles: ['ADA_SLC']
         })
 
     // UKDE Referral
@@ -142,7 +142,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'ukde_referral_1',
             password: bcrypt.hashSync('ukde1', salt),
-            roles: ['ukde']
+            roles: ['ADA_UKDE']
         })
 
     // Award Gross Amount
@@ -151,7 +151,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'award_gross_1',
             password: bcrypt.hashSync('awgrs1', salt),
-            roles: ['award-gross']
+            roles: ['ADA_AGA']
         })
 
     // Gym
@@ -160,7 +160,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'gym_1',
             password: bcrypt.hashSync('gym_1', salt),
-            roles: ['gym']
+            roles: ['ADA_GYM']
         })
 
     // Penalties Detailed
@@ -169,7 +169,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'penalties_detailed_1',
             password: bcrypt.hashSync('pendet1', salt),
-            roles: ['penalties']
+            roles: ['ADA_PD']
         })
 
     // On Call
@@ -178,7 +178,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'on_call_1',
             password: bcrypt.hashSync('call1', salt),
-            roles: ['on-call']
+            roles: ['ADA_OC']
         })
 
     // Profile Change
@@ -187,7 +187,7 @@ module.exports.up = function (done) {
         .insertOne({
             username: 'profile_change_1',
             password: bcrypt.hashSync('profcha1', salt),
-            roles: ['profile']
+            roles: ['ADA_PC']
         }).then(() => done());
 
 };
