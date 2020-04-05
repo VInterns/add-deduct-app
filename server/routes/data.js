@@ -39,7 +39,7 @@ module.exports = db => {
   // API: EXPORT DATA
   router.get("/export_data/:collection",
     ensureLoggedIn,
-    ensureHasRole(['admin', 'hr']),
+    ensureHasRole(['hr']),
     (req, res) => {
       let collection = req.params.collection;
       db.collection(collection)

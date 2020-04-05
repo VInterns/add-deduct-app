@@ -19,7 +19,7 @@ module.exports.up = function (done) {
             roles: ['hr']
         })
 
-    // Salary Adjust"admin","admin",
+    // Salary Adjustment
     this.db
         .collection(collection)
         .insertOne({

@@ -24,8 +24,9 @@ module.exports = db => {
       }
     );
   });
+
   let roles = {};
-  router.post("/search", ensureLoggedIn, ensureHasRole(["admin"]), function(
+  router.post("/search", ensureLoggedIn, ensureHasRole(["hr"]), function(
     req,
     res
   ) {
@@ -43,7 +44,7 @@ module.exports = db => {
   router.post(
     "/bulkregister",
     ensureLoggedIn,
-    ensureHasRole(["admin"]),
+    ensureHasRole(["hr"]),
     (req, res) => {
       const emplyees_columns = [
         "staffId",
