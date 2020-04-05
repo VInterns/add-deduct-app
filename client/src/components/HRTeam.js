@@ -8,13 +8,12 @@ export const HRTeam = (props) => {
     <Container fluid className="bg-white" style={{ height: "100%", width: "100%" }}>
       <div className="bg-white p-5">
         <TeamHeader team={props.teamName} />
-        <HRTeamTable header={props.tableHeader} />
+        <HRTeamTable />
       </div>
     </Container>
   );
 };
 
 HRTeam.protoTypes = {
-  teamName: PropTypes.string.isRequired,
-  tableHeader: PropTypes.string.isRequired
+  teamName: PropTypes.string.isRequired
 };
