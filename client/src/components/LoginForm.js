@@ -9,6 +9,8 @@ import {
   Dimmer
 } from 'semantic-ui-react';
 import vodafoneLogo from '../assets/images/logo.svg';
+import { getInitialRoute } from '../util';
+
 
 export class LoginForm extends Component {
   constructor() {
@@ -23,7 +25,8 @@ export class LoginForm extends Component {
     let { account } = nextProps;
     if (nextProps.isAuthenticated && account !== undefined) {
       let userRole = account.roles[0];
-      nextProps.history.push('/');
+      let initialRoute = getInitialRoute(userRole)
+      nextProps.history.push(initialRoute);
     }
     return null;
   }
