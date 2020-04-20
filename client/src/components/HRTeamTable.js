@@ -20,7 +20,8 @@ import {
     GYMT,
     PDT,
     OCT,
-    PCT
+    PCT,
+    NHT
 } from "../teams";
 
 const panes = [
@@ -43,6 +44,7 @@ const panes = [
     { menuItem: PDT.NAME, render: () => <MenuItem paneHeader={PDT.NAME} fileName={PDT.COLLECTION_NAME} paneKeys={PDT.PANE_KEYS} /> },
     { menuItem: OCT.NAME, render: () => <MenuItem paneHeader={OCT.NAME} fileName={OCT.COLLECTION_NAME} paneKeys={OCT.PANE_KEYS} /> },
     { menuItem: PCT.NAME, render: () => <MenuItem paneHeader={PCT.NAME} fileName={PCT.COLLECTION_NAME} paneKeys={PCT.PANE_KEYS} /> },
+    { menuItem: NHT.NAME, render: () => <MenuItem paneHeader={NHT.NAME} fileName={NHT.COLLECTION_NAME} paneKeys={NHT.PANE_KEYS}/>}
 ]
 
 export const HRTeamTable = () => {
