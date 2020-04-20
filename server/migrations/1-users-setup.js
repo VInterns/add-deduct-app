@@ -195,7 +195,7 @@ module.exports.up = function (done) {
         .collection(collection)
         .insertOne({
             username: 'new_hires_1',
-            password: bcrypt.hashSync('nuhire_1', salt),
+            password: bcrypt.hashSync('nuhire1', salt),
             roles: ['ADA_NH']
         }).then(() => done())
 
