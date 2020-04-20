@@ -36,6 +36,7 @@ import {
   PenaltiesDetailedScreen,
   OnCallScreen,
   ProfileChangeScreen,
+  NewHiresScreen,
   HRScreen
 } from "./screens";
 
@@ -230,6 +231,11 @@ class App extends Component {
                   path="/profile_change"
                   allowed={["ADA_PC"]}
                   component={ProfileChangeScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/new_hires"
+                  allowed={["ADA_NH"]}
+                  component={NewHiresScreen}
                 />
               </Switch>
             </Router>
