@@ -63,9 +63,6 @@ export class Header extends React.Component {
         </Navbar.Brand>
         <Nav className="mr-auto font-weight-bold">
           {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
-            <Nav.Link href="/upload_employees">Upload Employees</Nav.Link>
-          )}
-          {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
             <Nav.Link href="/upload_users">Upload Users</Nav.Link>
           )}
           {this.checkAuth(this.state.salaryAdjustmentUsers, this.props.account.roles) && (

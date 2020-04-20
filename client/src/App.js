@@ -132,12 +132,6 @@ class App extends Component {
                   component={UploadUsersScreen}
                 />
                 <ConnectedPrivateRoute
-                  allowed={["ADA_HR"]}
-                  path="/upload_employees"
-                  exact
-                  component={UploadEmployeesScreen}
-                />
-                <ConnectedPrivateRoute
                   path="/salary_adjust"
                   allowed={["ADA_SA"]}
                   component={SalaryAdjustmentScreen}
