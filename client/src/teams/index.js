@@ -25,13 +25,22 @@ const NEXT = {
     "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/1d814ff23a3bc8281c0268704f1b422f/net-expenses-sample.xlsx"
 }
 
-const NSADT = {
-    "NAME": "Night Shift Amount Days",
-    "COLLECTION_NAME": "night-shift-amount-days",
+const NSAT = {
+    "NAME": "Night Shift Amount",
+    "COLLECTION_NAME": "night-shift-days",
     "INITIAL_ROUTE": '/night_shift_amount_days',
-    "TABLE_HEADER": ["Vendor", "ID", "Night Shift Amount", "Night Shift Days"],
-    "PANE_KEYS": ["Vendor", "ID", "Night Shift Amount", "Night Shift Days", "Submitted By", "Submitted At"],
-    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/94a03f78d8e086768ba1b2599bfa75c0/night-shift-amount-days-sample.xlsx"
+    "TABLE_HEADER": ["Vendor", "ID", "Night Shift Amount"],
+    "PANE_KEYS": ["Vendor", "ID", "Night Shift Amount", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/3c6dfdaa08ecec1c960e90cc6cc318e5/night-shift-amount-sample.xlsx"
+}
+
+const NSDT = {
+    "NAME": "Night Shift Days",
+    "COLLECTION_NAME": "night-shift-days",
+    "INITIAL_ROUTE": '/night_shift_days',
+    "TABLE_HEADER": ["Vendor", "ID", "Night Shift Days"],
+    "PANE_KEYS": ["Vendor", "ID", "Night Shift Days", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/f8375dacb59f0e16c568d05e806b7cbc/night-shift-days-sample.xlsx"
 }
 
 const LHT = {
@@ -185,13 +194,14 @@ const HRT = {
 
 module.exports = {
     SAT,            // Salary Adjustment Team
-    OVT,             // Overtime Team
-    NEXT,            // Net Expenses Team
-    NSADT,          // Night Shift Amount Days Team
+    OVT,            // Overtime Team
+    NEXT,           // Net Expenses Team
+    NSAT,           // Night Shift Amount Team
+    NSDT,           // Night Shift Days Team
     LHT,            // Lost Hours Team
     ORGT,           // Overtime Reward Gross Team
-    NSHDT,           // No Show Detailed Team
-    NSHT,            // No Shows Team
+    NSHDT,          // No Show Detailed Team
+    NSHT,           // No Shows Team
     IGT,            // Incentives Gross Team
     INT,            // Incentives Net Team
     MBT,            // Mobile Bill Team
