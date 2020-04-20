@@ -26,6 +26,7 @@ export * from './GYMScreen';
 export * from './PenaltiesDetailedScreen';
 export * from './OnCallScreen';
 export * from './ProfileChangeScreen';
+export * from './NewHiresScreen';
 
 /* HR Team */
 export * from './HRScreen';
