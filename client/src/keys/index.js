@@ -1,26 +1,14 @@
 import {
-    SAT,
     OVT,
     NEXT,
     NSAT,
     NSDT,
-    LHT,
     ORGT,
-    NSHDT,
-    NSHT,
     IGT,
     INT,
-    MBT,
-    SLDT,
-    SLCT,
     UKDET,
     AGAT,
-    GYMT,
-    PDT,
-    OCT,
-    PCT,
-    NHT,
-    HRT
+    OCT
 } from '../teams';
 import _ from "lodash";
 
