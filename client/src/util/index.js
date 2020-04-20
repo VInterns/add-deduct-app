@@ -18,6 +18,7 @@ import {
     PDT,
     OCT,
     PCT,
+    NHT,
     HRT
 } from '../teams';
 
@@ -31,6 +32,7 @@ const roleRoute = {
     ADA_PC: PCT.INITIAL_ROUTE,
     ADA_PD: PDT.INITIAL_ROUTE,
     ADA_SA: SAT.INITIAL_ROUTE,
+    ADA_NH: NHT.INITIAL_ROUTE,
     ADA_OVT: OVT.INITIAL_ROUTE,
     ADA_AGA: AGAT.INITIAL_ROUTE,
     ADA_GYM: GYMT.INITIAL_ROUTE,
