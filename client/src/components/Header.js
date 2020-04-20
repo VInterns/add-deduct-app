@@ -15,7 +15,7 @@ export class Header extends React.Component {
       salaryAdjustmentUsers: ["ADA_SA"],
       overtimeUsers: ["ADA_OVT"],
       netExpensesUsers: ["ADA_NEX"],
-      nightShiftAmountDaysUsers: ["ADA_NSAD"],
+      nightShiftUsers: ["ADA_NSAD"],
       lostHoursUsers: ["ADA_LH"],
       overtimeRewardGrossUsers: ["ADA_ORG"],
       noShowDetailedUsers: ["ADA_NSHD"],
@@ -77,8 +77,11 @@ export class Header extends React.Component {
           {this.checkAuth(this.state.netExpensesUsers, this.props.account.roles) && (
             <Nav.Link href="/net_expenses">Net Expenses</Nav.Link>
           )}
-          {this.checkAuth(this.state.nightShiftAmountDaysUsers, this.props.account.roles) && (
-            <Nav.Link href="/night_shift_amount_days">Night Shift Amount Days</Nav.Link>
+          {this.checkAuth(this.state.nightShiftUsers, this.props.account.roles) && (
+            <Nav.Link href="/night_shift_amount">Night Shift Amount</Nav.Link>
+          )}
+          {this.checkAuth(this.state.nightShiftUsers, this.props.account.roles) && (
+            <Nav.Link href="/night_shift_days">Night Shift Days</Nav.Link>
           )}
           {this.checkAuth(this.state.lostHoursUsers, this.props.account.roles) && (
             <Nav.Link href="/lost_hours">Lost Hours</Nav.Link>
