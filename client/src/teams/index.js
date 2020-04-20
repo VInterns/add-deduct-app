@@ -2,9 +2,9 @@ const SAT = {
     "NAME": "Salary Adjustment",
     "COLLECTION_NAME": "salary-adjustment",
     "INITIAL_ROUTE": "/salary_adjust",
-    "TABLE_HEADER": ["Vendor", "Staff ID", "Roles", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date"],
-    "PANE_KEYS": ["Vendor", "Staff ID", "Roles", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date", "Submitted By", "Submitted At"],
-    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/ce92ff81cc4b7a041251510e3569063b/salary-adjustment-sample.xlsx",
+    "TABLE_HEADER": ["Vendor", "Staff ID", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date"],
+    "PANE_KEYS": ["Vendor", "Staff ID", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/f11fb52cbcba2718cae354e2a6932f88/salary-adjustment-sample.xlsx",
 }
 
 const OVT = {
