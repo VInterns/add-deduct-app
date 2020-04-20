@@ -175,7 +175,7 @@ const NHT = {
     "INITIAL_ROUTE": "/new_hires",
     "TABLE_HEADER": ["Vendor", "Employee Full Name", "Account", "Cost Center", "Contact Number", "National ID", "Hiring Date", "Profile (FT/PT)", "Site/Location", "Date of Birth", "Reporting Line Staff ID", "Gender", "Title", "Basic", "GB"],
     "PANE_KEYS": ["Vendor", "Employee Full Name", "Account", "Cost Center", "Contact Number", "National ID", "Hiring Date", "Profile (FT/PT)", "Site/Location", "Date of Birth", "Reporting Line Staff ID", "Gender", "Title", "Basic", "GB", "Submitted By", "Submitted At"],
-    "SAMPLE_EXCEL_URL": ""
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/bb327b68f4139db58ed17556418ebed4/new-hires-sample.xlsx"
 }
 
 const HRT = {
