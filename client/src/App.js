@@ -19,7 +19,8 @@ import {
   SalaryAdjustmentScreen,
   OvertimeScreen,
   NetExpensesScreen,
-  NightShiftAmountDaysScreen,
+  NightShiftAmountScreen,
+  NightShiftDaysScreen,
   LostHoursScreen,
   OvertimeRewardGrossScreen,
   NoShowDetailedScreen,
@@ -152,9 +153,14 @@ class App extends Component {
                   component={NetExpensesScreen}
                 />
                 <ConnectedPrivateRoute
-                  path="/night_shift_amount_days"
+                  path="/night_shift_amount"
                   allowed={["ADA_NSAD"]}
-                  component={NightShiftAmountDaysScreen}
+                  component={NightShiftAmountScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/night_shift_days"
+                  allowed={["ADA_NSAD"]}
+                  component={NightShiftDaysScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/lost_hours"
