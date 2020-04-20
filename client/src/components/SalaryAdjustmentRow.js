@@ -22,7 +22,7 @@ export class SalaryAdjustmentRow extends React.Component {
     }
 
     componentDidMount() {
-        let API = EXPORT_DATA_API + '/' + 'salary-adjustment';
+        let API = EXPORT_DATA_API + '/salary-adjustment';
         fetch(API, {
             headers: { "Content-Type": "application/json" },
             method: 'GET'
@@ -42,7 +42,6 @@ export class SalaryAdjustmentRow extends React.Component {
         let { data } = this.state;
 
         if (data !== null) {
-            console.log("not null", data)
             return (
                 <div className="d-flex flex-row bg-light border rounded justify-content-between align-items-center mt-2 p-3">
                     <div className="d-flex flex-row">
