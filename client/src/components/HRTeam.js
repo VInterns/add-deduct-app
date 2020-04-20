@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Container } from "semantic-ui-react";
-import { TeamHeader, HRTeamTable } from ".";
+import { TeamHeader, HRTeamTable } from "../components";
 
 export const HRTeam = (props) => {
   return (
