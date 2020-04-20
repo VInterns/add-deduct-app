@@ -169,6 +169,15 @@ const PCT = {
     "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/cb871660388e3bbea992c6b22de4339b/profile-change-sample.xlsx"
 }
 
+const NHT = {
+    "NAME": "New Hires",
+    "COLLECTION_NAME": "new-hires",
+    "INITIAL_ROUTE": "/new_hires",
+    "TABLE_HEADER": ["Vendor", "Employee Full Name", "Account", "Cost Center", "Contact Number", "National ID", "Hiring Date", "Profile (FT/PT)", "Site/Location", "Date of Birth", "Reporting Line Staff ID", "Gender", "Title", "Basic", "GB"],
+    "PANE_KEYS": ["Vendor", "Employee Full Name", "Account", "Cost Center", "Contact Number", "National ID", "Hiring Date", "Profile (FT/PT)", "Site/Location", "Date of Birth", "Reporting Line Staff ID", "Gender", "Title", "Basic", "GB", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": ""
+}
+
 const HRT = {
     "NAME": "Human Resources",
     "INITIAL_ROUTE": "/hr"
@@ -194,5 +203,6 @@ module.exports = {
     PDT,            // Penalties Detailed Team
     OCT,            // On Call Team
     PCT,            // Profile Change Team
+    NHT,            // New Hires Team
     HRT             // Human Resources Team
 }
