@@ -30,7 +30,8 @@ export class Header extends React.Component {
       gymUsers: ["ADA_GYM"],
       penaltiesDetailedUsers: ["ADA_PD"],
       onCallUsers: ["ADA_OC"],
-      profileChangeUsers: ["ADA_PC"]
+      profileChangeUsers: ["ADA_PC"],
+      newHiresUsers: ["ADA_NH"]
     };
   }
 
@@ -123,6 +124,9 @@ export class Header extends React.Component {
           )}
           {this.checkAuth(this.state.profileChangeUsers, this.props.account.roles) && (
             <Nav.Link href="/profile_change">Profile Change</Nav.Link>
+          )}
+          {this.checkAuth(this.state.newHiresUsers, this.props.account.roles) && (
+            <Nav.Link href="/new_hires">New Hires</Nav.Link>
           )}
         </Nav>
         <Nav className="justify-content-end font-weight-bold" activeKey="/home">
