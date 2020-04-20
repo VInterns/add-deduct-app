@@ -4,7 +4,6 @@ export * from './RegistrationScreen';
 
 /* Upload Users & Employees*/
 export * from './UploadUsersScreen';
-export * from './UploadEmployeesScreen';
 
 /* Function Teams */
 export * from './SalaryAdjustScreen';
