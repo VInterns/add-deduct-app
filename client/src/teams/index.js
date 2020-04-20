@@ -27,8 +27,8 @@ const NEXT = {
 
 const NSAT = {
     "NAME": "Night Shift Amount",
-    "COLLECTION_NAME": "night-shift-days",
-    "INITIAL_ROUTE": '/night_shift_amount_days',
+    "COLLECTION_NAME": "night-shift-amount",
+    "INITIAL_ROUTE": '/night_shift_amount',
     "TABLE_HEADER": ["Vendor", "ID", "Night Shift Amount"],
     "PANE_KEYS": ["Vendor", "ID", "Night Shift Amount", "Submitted By", "Submitted At"],
     "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/3c6dfdaa08ecec1c960e90cc6cc318e5/night-shift-amount-sample.xlsx"
