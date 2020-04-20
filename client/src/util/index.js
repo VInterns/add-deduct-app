@@ -2,7 +2,7 @@ import {
     SAT,
     OVT,
     NEXT,
-    NSADT,
+    NSAT,
     LHT,
     ORGT,
     NSHDT,
@@ -18,6 +18,7 @@ import {
     PDT,
     OCT,
     PCT,
+    NHT,
     HRT
 } from '../teams';
 
@@ -31,6 +32,7 @@ const roleRoute = {
     ADA_PC: PCT.INITIAL_ROUTE,
     ADA_PD: PDT.INITIAL_ROUTE,
     ADA_SA: SAT.INITIAL_ROUTE,
+    ADA_NH: NHT.INITIAL_ROUTE,
     ADA_OVT: OVT.INITIAL_ROUTE,
     ADA_AGA: AGAT.INITIAL_ROUTE,
     ADA_GYM: GYMT.INITIAL_ROUTE,
@@ -39,7 +41,7 @@ const roleRoute = {
     ADA_ORG: ORGT.INITIAL_ROUTE,
     ADA_SLC: SLCT.INITIAL_ROUTE,
     ADA_SLD: SLDT.INITIAL_ROUTE,
-    ADA_NSAD: NSADT.INITIAL_ROUTE,
+    ADA_NSAD: NSAT.INITIAL_ROUTE,
     ADA_NSHD: NSHDT.INITIAL_ROUTE,
     ADA_UKDE: UKDET.INITIAL_ROUTE,
 }

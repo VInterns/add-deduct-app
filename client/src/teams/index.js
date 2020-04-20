@@ -2,9 +2,9 @@ const SAT = {
     "NAME": "Salary Adjustment",
     "COLLECTION_NAME": "salary-adjustment",
     "INITIAL_ROUTE": "/salary_adjust",
-    "TABLE_HEADER": ["Vendor", "Staff ID", "Roles", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date"],
-    "PANE_KEYS": ["Vendor", "Staff ID", "Roles", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date", "Submitted By", "Submitted At"],
-    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/ce92ff81cc4b7a041251510e3569063b/salary-adjustment-sample.xlsx",
+    "TABLE_HEADER": ["Vendor", "Staff ID", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date"],
+    "PANE_KEYS": ["Vendor", "Staff ID", "Name", "Basic Net", "GB", "Net Salary", "New Basic Net Salary", "GB New", "Total", "Effective Date", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/f11fb52cbcba2718cae354e2a6932f88/salary-adjustment-sample.xlsx",
 }
 
 const OVT = {
@@ -25,13 +25,22 @@ const NEXT = {
     "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/1d814ff23a3bc8281c0268704f1b422f/net-expenses-sample.xlsx"
 }
 
-const NSADT = {
-    "NAME": "Night Shift Amount Days",
-    "COLLECTION_NAME": "night-shift-amount-days",
-    "INITIAL_ROUTE": '/night_shift_amount_days',
-    "TABLE_HEADER": ["Vendor", "ID", "Night Shift Amount", "Night Shift Days"],
-    "PANE_KEYS": ["Vendor", "ID", "Night Shift Amount", "Night Shift Days", "Submitted By", "Submitted At"],
-    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/94a03f78d8e086768ba1b2599bfa75c0/night-shift-amount-days-sample.xlsx"
+const NSAT = {
+    "NAME": "Night Shift Amount",
+    "COLLECTION_NAME": "night-shift-amount",
+    "INITIAL_ROUTE": '/night_shift_amount',
+    "TABLE_HEADER": ["Vendor", "ID", "Night Shift Amount"],
+    "PANE_KEYS": ["Vendor", "ID", "Night Shift Amount", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/3c6dfdaa08ecec1c960e90cc6cc318e5/night-shift-amount-sample.xlsx"
+}
+
+const NSDT = {
+    "NAME": "Night Shift Days",
+    "COLLECTION_NAME": "night-shift-days",
+    "INITIAL_ROUTE": '/night_shift_days',
+    "TABLE_HEADER": ["Vendor", "ID", "Night Shift Days"],
+    "PANE_KEYS": ["Vendor", "ID", "Night Shift Days", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/f8375dacb59f0e16c568d05e806b7cbc/night-shift-days-sample.xlsx"
 }
 
 const LHT = {
@@ -169,6 +178,15 @@ const PCT = {
     "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/cb871660388e3bbea992c6b22de4339b/profile-change-sample.xlsx"
 }
 
+const NHT = {
+    "NAME": "New Hires",
+    "COLLECTION_NAME": "new-hires",
+    "INITIAL_ROUTE": "/new_hires",
+    "TABLE_HEADER": ["Vendor", "Employee Full Name", "Account", "Cost Center", "Contact Number", "National ID", "Hiring Date", "Profile (FT/PT)", "Site/Location", "Date of Birth", "Reporting Line Staff ID", "Gender", "Title", "Basic", "GB"],
+    "PANE_KEYS": ["Vendor", "Employee Full Name", "Account", "Cost Center", "Contact Number", "National ID", "Hiring Date", "Profile (FT/PT)", "Site/Location", "Date of Birth", "Reporting Line Staff ID", "Gender", "Title", "Basic", "GB", "Submitted By", "Submitted At"],
+    "SAMPLE_EXCEL_URL": "https://trello-attachments.s3.amazonaws.com/5e1f261085da7e5ef966e7ce/5e8396d671713937059e50e9/bb327b68f4139db58ed17556418ebed4/new-hires-sample.xlsx"
+}
+
 const HRT = {
     "NAME": "Human Resources",
     "INITIAL_ROUTE": "/hr"
@@ -176,13 +194,14 @@ const HRT = {
 
 module.exports = {
     SAT,            // Salary Adjustment Team
-    OVT,             // Overtime Team
-    NEXT,            // Net Expenses Team
-    NSADT,          // Night Shift Amount Days Team
+    OVT,            // Overtime Team
+    NEXT,           // Net Expenses Team
+    NSAT,           // Night Shift Amount Team
+    NSDT,           // Night Shift Days Team
     LHT,            // Lost Hours Team
     ORGT,           // Overtime Reward Gross Team
-    NSHDT,           // No Show Detailed Team
-    NSHT,            // No Shows Team
+    NSHDT,          // No Show Detailed Team
+    NSHT,           // No Shows Team
     IGT,            // Incentives Gross Team
     INT,            // Incentives Net Team
     MBT,            // Mobile Bill Team
@@ -194,5 +213,6 @@ module.exports = {
     PDT,            // Penalties Detailed Team
     OCT,            // On Call Team
     PCT,            // Profile Change Team
+    NHT,            // New Hires Team
     HRT             // Human Resources Team
 }

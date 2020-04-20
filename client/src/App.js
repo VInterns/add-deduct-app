@@ -13,14 +13,14 @@ import { PersistGate } from "redux-persist/integration/react";
 import { ConnectedHeader, ConnectedPrivateRoute } from "./components";
 
 import {
-  UploadEmployeesScreen,
   UploadUsersScreen,
   RegistrationScreen,
   AuthenticationScreen,
   SalaryAdjustmentScreen,
   OvertimeScreen,
   NetExpensesScreen,
-  NightShiftAmountDaysScreen,
+  NightShiftAmountScreen,
+  NightShiftDaysScreen,
   LostHoursScreen,
   OvertimeRewardGrossScreen,
   NoShowDetailedScreen,
@@ -36,7 +36,9 @@ import {
   PenaltiesDetailedScreen,
   OnCallScreen,
   ProfileChangeScreen,
-  HRScreen
+  NewHiresScreen,
+  HRScreen,
+  HRFilesScreen
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -126,15 +128,14 @@ class App extends Component {
                 />
                 <ConnectedPrivateRoute
                   allowed={["ADA_HR"]}
-                  path="/upload_users"
-                  exact
-                  component={UploadUsersScreen}
+                  path="/hr_files"
+                  component={HRFilesScreen}
                 />
                 <ConnectedPrivateRoute
                   allowed={["ADA_HR"]}
-                  path="/upload_employees"
+                  path="/upload_users"
                   exact
-                  component={UploadEmployeesScreen}
+                  component={UploadUsersScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/salary_adjust"
@@ -152,9 +153,14 @@ class App extends Component {
                   component={NetExpensesScreen}
                 />
                 <ConnectedPrivateRoute
-                  path="/night_shift_amount_days"
+                  path="/night_shift_amount"
                   allowed={["ADA_NSAD"]}
-                  component={NightShiftAmountDaysScreen}
+                  component={NightShiftAmountScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/night_shift_days"
+                  allowed={["ADA_NSAD"]}
+                  component={NightShiftDaysScreen}
                 />
                 <ConnectedPrivateRoute
                   path="/lost_hours"
@@ -230,6 +236,11 @@ class App extends Component {
                   path="/profile_change"
                   allowed={["ADA_PC"]}
                   component={ProfileChangeScreen}
+                />
+                <ConnectedPrivateRoute
+                  path="/new_hires"
+                  allowed={["ADA_NH"]}
+                  component={NewHiresScreen}
                 />
               </Switch>
             </Router>

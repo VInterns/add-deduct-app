@@ -190,6 +190,15 @@ module.exports.up = function (done) {
             roles: ['ADA_PC']
         }).then(() => done());
 
+    // New Hires
+    this.db
+        .collection(collection)
+        .insertOne({
+            username: 'new_hires_2',
+            password: bcrypt.hashSync('nuhire2', salt),
+            roles: ['ADA_NH']
+        }).then(() => done())
+
 };
 
 module.exports.down = function (done) {
