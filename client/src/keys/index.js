@@ -1,14 +1,17 @@
 import {
+    IGT,
+    INT,
+    NHT,
     OVT,
+    OCT,
+    PCT,
+    SAT,
     NEXT,
     NSAT,
     NSDT,
     ORGT,
-    IGT,
-    INT,
     UKDET,
-    AGAT,
-    OCT
+    AGAT
 } from '../teams';
 import _ from "lodash";
 
@@ -20,6 +23,10 @@ export const IN_keys = INT.PANE_KEYS.map(key => {
     return _.camelCase(key)
 });
 
+export const NH_keys = NHT.PANE_KEYS.map(key => {
+    return _.camelCase(key)
+})
+
 export const OC_keys = OCT.PANE_KEYS.map(key => {
     return _.camelCase(key)
 });
@@ -27,6 +34,14 @@ export const OC_keys = OCT.PANE_KEYS.map(key => {
 export const OV_keys = OVT.PANE_KEYS.map(key => {
     return _.camelCase(key)
 });
+
+export const PC_keys = PCT.PANE_KEYS.map(key => {
+    return _.camelCase(key)
+})
+
+export const SA_keys = SAT.PANE_KEYS.map(key => {
+    return _.camelCase(key)
+})
 
 export const AGA_keys = AGAT.PANE_KEYS.map(key => {
     return _.camelCase(key)
