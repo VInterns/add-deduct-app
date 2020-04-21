@@ -98,7 +98,6 @@ export class AdditionRow extends React.Component {
 
     render() {
         let fileName = "addition";
-
         let { IGD, IND, OCD, OVD, AGAD, NEXD, NSAD, NSDD, ORGD, UKDED } = this.state;
 
         if (

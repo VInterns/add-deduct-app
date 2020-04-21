@@ -7,6 +7,7 @@ import {
     Segment,
 } from "semantic-ui-react";
 import _ from "lodash";
+import { NH_keys } from "../keys";
 import { ButtonWB } from "../components";
 import { EXPORT_DATA_API } from "../api";
 import Workbook from "react-excel-workbook";
@@ -51,9 +52,11 @@ export class NewHiresRow extends React.Component {
                     <div className="align-self-end">
                         <Workbook filename={fileName + '.xlsx'} element={<ButtonWB />}>
                             <Workbook.Sheet data={data} name={_.startCase(fileName)}>
-                                {Object.keys(data[0]).map((k, i) => {
-                                    return <Workbook.Column key={i} label={_.startCase(k)} value={k} />
-                                })}
+                                {
+                                    NH_keys.map((k, i) => {
+                                        return <Workbook.Column key={i} label={_.startCase(k)} value={k} />
+                                    })
+                                }
                             </Workbook.Sheet>
                         </Workbook>
                     </div>
