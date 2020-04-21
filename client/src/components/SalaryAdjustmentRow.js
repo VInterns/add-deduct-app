@@ -7,7 +7,8 @@ import {
     Segment,
 } from "semantic-ui-react";
 import _ from "lodash";
-import { ButtonWB } from ".";
+import { SA_keys } from "../keys";
+import { ButtonWB } from "../components";
 import { EXPORT_DATA_API } from "../api";
 import Workbook from "react-excel-workbook";
 
@@ -38,7 +39,7 @@ export class SalaryAdjustmentRow extends React.Component {
     }
 
     render() {
-        let fileName  = "salary-adjustment";
+        let fileName = "salary-adjustment";
         let { data } = this.state;
 
         if (data !== null) {
@@ -51,9 +52,11 @@ export class SalaryAdjustmentRow extends React.Component {
                     <div className="align-self-end">
                         <Workbook filename={fileName + '.xlsx'} element={<ButtonWB />}>
                             <Workbook.Sheet data={data} name={_.startCase(fileName)}>
-                                {Object.keys(data[0]).map((k, i) => {
-                                    return <Workbook.Column key={i} label={_.startCase(k)} value={k} />
-                                })}
+                                {
+                                    SA_keys.map((k, i) => {
+                                        return <Workbook.Column key={i} label={_.startCase(k)} value={k} />
+                                    })
+                                }
                             </Workbook.Sheet>
                         </Workbook>
                     </div>
