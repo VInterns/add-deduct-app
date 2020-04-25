@@ -45,7 +45,7 @@ module.exports = db => {
       let date = _.startCase(req.params.date);
       let collection = (req.params.collection).replace(/_/, '-');
       db.collection(collection)
-        .find({ submittedAt: date }, { fields: { _id: 0 } })
+        .find({ submittedAt: date }, { projection: { _id: 0 } })
         .toArray((err, resultArray) => {
           if (err) {
             console.error(err);
