@@ -38,11 +38,11 @@ module.exports = db => {
     });
 
   // API: EXPORT DATA
-  router.get("/export_data/:collection/:date",
+  router.get("/export_data/:collection/:year/:month",
     ensureLoggedIn,
     ensureHasRole(['ADA_HR']),
     (req, res) => {
-      let date = _.startCase(req.params.date);
+      let date = _.startCase((req.params.month + " " + req.params.year));
       let collection = (req.params.collection).replace(/_/, '-');
       db.collection(collection)
         .find({ submittedAt: date }, { projection: { _id: 0 } })
