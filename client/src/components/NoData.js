@@ -7,7 +7,7 @@ export const NoData = () => {
             <div className='bg-danger rounded p-5 d-flex flex-column align-items-center justify-content-center'>
                 <Icon name='frown' size='massive' inverted />
                 <h1 className='display-3 text-white'>Ooops...</h1>
-                <h2 className='text-white'>No data has been found for this month</h2>
+                <h2 className='text-white'>No data has been found for this month of year</h2>
             </div>
         </div>
     )
