@@ -12,14 +12,22 @@ export class MenuItem extends React.Component {
         super(props);
         this.state = {
             records: null,
-            month: '',
-            year: '',
+            month: 'january',
+            year: '2020',
             collection: this.props.fileName
         }
     }
 
     handleClick = () => {
         this.fetchData();
+    }
+
+    resetHandler = () => {
+        this.setState({
+            month: 'january',
+            year: '2020',
+            records: null
+        })
     }
 
     static getDerivedStateFromProps(nextProps, prevState) {
@@ -86,22 +94,11 @@ export class MenuItem extends React.Component {
     render() {
         let { year, month, records } = this.state;
         let { paneHeader, fileName, paneKeys, months, years } = this.props;
-        console.log(records)
         return (
             <Tab.Pane className='p-5'>
                 <ToastContainer />
                 <PaneHeader paneTeamName={paneHeader} />
                 <div className="mt-5 d-flex flex-row">
-                    <Dropdown
-                        placeholder='Select Month'
-                        fluid
-                        search
-                        selection
-                        options={months}
-                        className="w-25 mr-3"
-                        defaultValue={month}
-                        onChange={this.handleMonthChoice}
-                    />
                     <Dropdown
                         placeholder='Select Year'
                         fluid
@@ -112,12 +109,30 @@ export class MenuItem extends React.Component {
                         defaultValue={year}
                         onChange={this.handleYearChoice}
                     />
+                    <Dropdown
+                        placeholder='Select Month'
+                        fluid
+                        search
+                        selection
+                        options={months}
+                        className="w-25 mr-3"
+                        defaultValue={month}
+                        onChange={this.handleMonthChoice}
+                    />
                     <Button
                         color='red'
+                        className='mr-3'
                         onClick={this.handleClick}
                     >
                         <Icon name='search' inverted />
                         Search
+                    </Button>
+                    <Button
+                        basic
+                        onClick={this.resetHandler}
+                    >
+                        <Icon name='redo' />
+                        Reset
                     </Button>
                 </div>
                 {
