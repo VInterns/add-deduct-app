@@ -24,27 +24,10 @@ import {
     PCT,
     NHT
 } from "../teams";
-
-const MONTHS = [
-    { key: 'jan', value: 'january', text: 'January' },
-    { key: 'feb', value: 'february', text: 'February' },
-    { key: 'mar', value: 'march', text: 'March' },
-    { key: 'apr', value: 'april', text: 'April' },
-    { key: 'may', value: 'may', text: 'May' },
-    { key: 'jun', value: 'june', text: 'June' },
-    { key: 'jul', value: 'july', text: 'July' },
-    { key: 'aug', value: 'august', text: 'August' },
-    { key: 'sep', value: 'september', text: 'September' },
-    { key: 'oct', value: 'october', text: 'October' },
-    { key: 'nov', value: 'november', text: 'November' },
-    { key: 'dec', value: 'december', text: 'December' },
-]
-
-const YEARS = [
-    { key: '2020', value: '2020', text: '2020' },
-    { key: '2021', value: '2021', text: '2021' },
-    { key: '2022', value: '2022', text: '2022' }
-]
+import {
+    YEARS,
+    MONTHS
+} from "../util";
 
 const panes = [
     { menuItem: SAT.NAME, render: () => <MenuItem paneHeader={SAT.NAME} fileName={SAT.COLLECTION_NAME} paneKeys={SAT.PANE_KEYS} months={MONTHS} years={YEARS} /> },
