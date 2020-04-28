@@ -37,9 +37,7 @@ import {
   OnCallScreen,
   ProfileChangeScreen,
   NewHiresScreen,
-  HRScreen,
-  HRFilesScreen,
-  ViewData
+  HRDashboard
 } from "./screens";
 
 import "semantic-ui-css/semantic.min.css";
@@ -124,24 +122,7 @@ class App extends Component {
                 <ConnectedPrivateRoute
                   allowed={["ADA_HR"]}
                   path="/hr"
-                  exact
-                  component={HRScreen}
-                />
-                <ConnectedPrivateRoute
-                  allowed={["ADA_HR"]}
-                  path="/hr_download_files"
-                  component={HRFilesScreen}
-                />
-                <ConnectedPrivateRoute
-                  allowed={["ADA_HR"]}
-                  path="/hr_view_data"
-                  component={ViewData}
-                />
-                <ConnectedPrivateRoute
-                  allowed={["ADA_HR"]}
-                  path="/upload_users"
-                  exact
-                  component={UploadUsersScreen}
+                  component={HRDashboard}
                 />
                 <ConnectedPrivateRoute
                   path="/salary_adjust"
