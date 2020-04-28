@@ -59,7 +59,7 @@ export class Header extends React.Component {
       <Navbar style={{ backgroundColor: "#db2828" }} variant="dark">
         <Navbar.Brand>
           <Image src={Logo} style={{ height: "50px", width: "50px" }} rounded />
-          <label className='font-weight-bold'>Leaver App</label>
+          <label className='font-weight-bold'>Add Deduct App</label>
         </Navbar.Brand>
         <Nav className="mr-auto font-weight-bold">
           {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
