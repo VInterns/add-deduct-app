@@ -1,8 +1,6 @@
 import React from "react";
 import {
     Tab,
-    Menu,
-    Label,
     Header,
     Divider,
     Container,
