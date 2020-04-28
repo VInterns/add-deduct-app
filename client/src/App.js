@@ -13,7 +13,6 @@ import { PersistGate } from "redux-persist/integration/react";
 import { ConnectedHeader, ConnectedPrivateRoute } from "./components";
 
 import {
-  UploadUsersScreen,
   RegistrationScreen,
   AuthenticationScreen,
   SalaryAdjustmentScreen,
