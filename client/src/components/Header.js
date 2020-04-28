@@ -63,13 +63,7 @@ export class Header extends React.Component {
         </Navbar.Brand>
         <Nav className="mr-auto font-weight-bold">
           {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
-            <Nav.Link href="/upload_users">Upload Users</Nav.Link>
-          )}
-          {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
-            <Nav.Link href="/hr_download_files">Download Excel Files</Nav.Link>
-          )}
-          {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
-            <Nav.Link href="/hr_view_data">View Submitted Data</Nav.Link>
+            <Nav.Link href="/hr">HR Dashboard</Nav.Link>
           )}
           {this.checkAuth(this.state.salaryAdjustmentUsers, this.props.account.roles) && (
             <Nav.Link href="/salary_adjust">Salary Adjustment</Nav.Link>
@@ -136,10 +130,6 @@ export class Header extends React.Component {
           )}
         </Nav>
         <Nav className="justify-content-end font-weight-bold" activeKey="/home">
-          {this.checkAuth(
-            this.state.hrUsers,
-            this.props.account.roles
-          ) && <Nav.Link href="/hr">HR</Nav.Link>}
           <Nav.Link
             position="right"
             onClick={() => {
