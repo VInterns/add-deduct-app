@@ -66,7 +66,10 @@ export class Header extends React.Component {
             <Nav.Link href="/upload_users">Upload Users</Nav.Link>
           )}
           {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
-            <Nav.Link href="/hr_files">Excel Files</Nav.Link>
+            <Nav.Link href="/hr_download_files">Download Excel Files</Nav.Link>
+          )}
+          {this.checkAuth(this.state.hrUsers, this.props.account.roles) && (
+            <Nav.Link href="/hr_view_data">View Submitted Data</Nav.Link>
           )}
           {this.checkAuth(this.state.salaryAdjustmentUsers, this.props.account.roles) && (
             <Nav.Link href="/salary_adjust">Salary Adjustment</Nav.Link>
