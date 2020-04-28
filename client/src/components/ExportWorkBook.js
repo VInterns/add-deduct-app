@@ -12,7 +12,7 @@ export const ExportWorkBook = (props) => {
     let { keys, sheets } = getKeysAndSheets(name);
     if (data.length !== 0) {
         return (
-            <div className="d-flex bg-light border rounded justify-content-between align-items-center mt-2 p-2 w-25">
+            <div className="d-flex bg-light border rounded justify-content-between align-items-center p-2 w-50">
                 <div className="d-flex align-items-center">
                     <Icon name="file excel" color="green" size="big" />
                     <p className="lead ml-2 text-success">{name}</p>
