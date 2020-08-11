@@ -1,4 +1,5 @@
 import React from "react";
+import _ from "lodash";
 import { fetchAllUsers } from "../helpers";
 import {
   Header,
@@ -8,7 +9,7 @@ import {
   Segment,
   Loader,
 } from "semantic-ui-react";
-import { PaneContent } from "../components";
+import { UsersTable } from "../components";
 
 export class ManageUsersScreen extends React.Component {
   constructor(props) {
@@ -28,7 +29,9 @@ export class ManageUsersScreen extends React.Component {
     const { sysUsers } = this.state;
     console.log(sysUsers);
     if (sysUsers.length !== 0) {
-      let userKeys = Object.keys(sysUsers[0]);
+      let keys = Object.keys(sysUsers[0]);
+      keys.push("actions");
+      const userKeys = keys.map((key) => _.startCase(key));
       return (
         <Container fluid className="bg-white p-5" style={{ height: "100vh" }}>
           <div>
@@ -37,9 +40,7 @@ export class ManageUsersScreen extends React.Component {
             </Header>
             <Divider clearing />
           </div>
-          {sysUsers && (
-            <PaneContent tableKeys={userKeys} tableData={sysUsers} />
-          )}
+          {sysUsers && <UsersTable tableKeys={userKeys} tableData={sysUsers} />}
         </Container>
       );
     } else {
@@ -47,7 +48,7 @@ export class ManageUsersScreen extends React.Component {
         <div>
           <Segment>
             <Dimmer active>
-              <Loader content="loading">Fetching Data</Loader>
+              <Loader>Fetching Data</Loader>
             </Dimmer>
           </Segment>
         </div>
