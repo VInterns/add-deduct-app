@@ -44,7 +44,7 @@ module.exports = (db) => {
   // API: RETURN ALL USERS
   router.get("/listUsers", ensureLoggedIn, (req, res) => {
     db.collection("users")
-      .find({}, { projection: { password: 0, _id: 0 } })
+      .find({}, { projection: { password: 0, _id: 0, roles: 0 } })
       .toArray((err, users) => {
         if (err) {
           console.log(err);
@@ -52,6 +52,18 @@ module.exports = (db) => {
         }
         res.status(200).json(users).end();
       });
+  });
+
+  // TODO: fix api
+  router.post("/status/:username", ensureLoggedIn, (req, res) => {
+    db.collection("users").findOneAndUpdate(
+      { username: req.params.username },
+      { $set: { status: req.body.status } },
+      (err, doc) => {
+        if (err) throw err;
+        res.status(200).json({ updated: true }).end();
+      }
+    );
   });
 
   router.post(
