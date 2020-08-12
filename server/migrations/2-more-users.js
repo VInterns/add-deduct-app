@@ -12,7 +12,7 @@ module.exports.up = function (done) {
   // HR Admin
   this.db.collection(collection).insertOne({
     username: "hr_admin_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("hradmin2", salt),
     roles: ["ADA_HR"],
   });
@@ -20,7 +20,7 @@ module.exports.up = function (done) {
   // Salary Adjust
   this.db.collection(collection).insertOne({
     username: "salary_adjust_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("salary2", salt),
     roles: ["ADA_SA"],
   });
@@ -28,7 +28,7 @@ module.exports.up = function (done) {
   // Overtime
   this.db.collection(collection).insertOne({
     username: "overtime_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("overtime2", salt),
     roles: ["ADA_OVT"],
   });
@@ -36,7 +36,7 @@ module.exports.up = function (done) {
   // Next Expense
   this.db.collection(collection).insertOne({
     username: "net_expenses_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("ntxpns", salt),
     roles: ["ADA_NEX"],
   });
@@ -44,7 +44,7 @@ module.exports.up = function (done) {
   // Night Shift
   this.db.collection(collection).insertOne({
     username: "night_shift_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("nshft2", salt),
     roles: ["ADA_NSAD"],
   });
@@ -52,7 +52,7 @@ module.exports.up = function (done) {
   // Lost Hours
   this.db.collection(collection).insertOne({
     username: "lost_hours_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("lohrs2", salt),
     roles: ["ADA_LH"],
   });
@@ -60,7 +60,7 @@ module.exports.up = function (done) {
   // Overtime Reward Gross
   this.db.collection(collection).insertOne({
     username: "overtime_reward_gross_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("otrwgrs2", salt),
     roles: ["ADA_ORG"],
   });
@@ -68,7 +68,7 @@ module.exports.up = function (done) {
   // No Show Detailed
   this.db.collection(collection).insertOne({
     username: "no_show_detailed_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("nshowd2", salt),
     roles: ["ADA_NSHD"],
   });
@@ -76,7 +76,7 @@ module.exports.up = function (done) {
   // No Shows
   this.db.collection(collection).insertOne({
     username: "no_shows_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("nshows2", salt),
     roles: ["ADA_NSH"],
   });
@@ -84,7 +84,7 @@ module.exports.up = function (done) {
   // Incentives Gross
   this.db.collection(collection).insertOne({
     username: "incentives_gross_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("incntgrs2", salt),
     roles: ["ADA_IG"],
   });
@@ -92,7 +92,7 @@ module.exports.up = function (done) {
   // Incentives Net
   this.db.collection(collection).insertOne({
     username: "incentives_net_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("incntnet2", salt),
     roles: ["ADA_IN"],
   });
@@ -100,7 +100,7 @@ module.exports.up = function (done) {
   // Mobile Bill
   this.db.collection(collection).insertOne({
     username: "mobile_bill_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("mblbl2", salt),
     roles: ["ADA_MB"],
   });
@@ -108,7 +108,7 @@ module.exports.up = function (done) {
   // Sick Leave Detailed
   this.db.collection(collection).insertOne({
     username: "sick_leave_detailed_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("sklvde2", salt),
     roles: ["ADA_SLD"],
   });
@@ -116,7 +116,7 @@ module.exports.up = function (done) {
   // Sick Leave Cons
   this.db.collection(collection).insertOne({
     username: "sick_leave_cons_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("sklvco2", salt),
     roles: ["ADA_SLC"],
   });
@@ -124,7 +124,7 @@ module.exports.up = function (done) {
   // UKDE Referral
   this.db.collection(collection).insertOne({
     username: "ukde_referral_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("ukde2", salt),
     roles: ["ADA_UKDE"],
   });
@@ -132,7 +132,7 @@ module.exports.up = function (done) {
   // Award Gross Amount
   this.db.collection(collection).insertOne({
     username: "award_gross_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("awgrs2", salt),
     roles: ["ADA_AGA"],
   });
@@ -140,7 +140,7 @@ module.exports.up = function (done) {
   // Gym
   this.db.collection(collection).insertOne({
     username: "gym_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("gym_2", salt),
     roles: ["ADA_GYM"],
   });
@@ -148,7 +148,7 @@ module.exports.up = function (done) {
   // Penalties Detailed
   this.db.collection(collection).insertOne({
     username: "penalties_detailed_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("pendet2", salt),
     roles: ["ADA_PD"],
   });
@@ -156,7 +156,7 @@ module.exports.up = function (done) {
   // On Call
   this.db.collection(collection).insertOne({
     username: "on_call_2",
-    status: "activated",
+    active: true,
     password: bcrypt.hashSync("call2", salt),
     roles: ["ADA_OC"],
   });
@@ -166,7 +166,7 @@ module.exports.up = function (done) {
     .collection(collection)
     .insertOne({
       username: "profile_change_2",
-      status: "activated",
+      active: true,
       password: bcrypt.hashSync("profcha2", salt),
       roles: ["ADA_PC"],
     })
@@ -177,7 +177,7 @@ module.exports.up = function (done) {
     .collection(collection)
     .insertOne({
       username: "new_hires_2",
-      status: "activated",
+      active: true,
       password: bcrypt.hashSync("nuhire2", salt),
       roles: ["ADA_NH"],
     })
