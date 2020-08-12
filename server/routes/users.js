@@ -66,6 +66,17 @@ module.exports = (db) => {
     );
   });
 
+  // API: DELETE USER
+  router.delete("/:username", (req, res) => {
+    db.collection("users").deleteOne(
+      { username: req.params.username },
+      (err) => {
+        if (err) throw err;
+        res.status(200).json({ deleted: true }).end();
+      }
+    );
+  });
+
   router.post(
     "/bulkregister",
     ensureLoggedIn,
