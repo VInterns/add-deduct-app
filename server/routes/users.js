@@ -61,20 +61,18 @@ module.exports = (db) => {
       { $set: { status: req.body.status } },
       (err, doc) => {
         if (err) throw err;
-        res.status(200).json({ updated: true }).end();
+        res.status(200).json({ statusUpdated: true }).end();
       }
     );
   });
 
   // API: DELETE USER
-  router.delete("/:username", (req, res) => {
-    db.collection("users").deleteOne(
-      { username: req.params.username },
-      (err) => {
-        if (err) throw err;
-        res.status(200).json({ deleted: true }).end();
-      }
-    );
+  router.delete("/deleteUser/:username", (req, res) => {
+    let user = req.params.username;
+    db.collection("users").deleteOne({ username: user }, (err) => {
+      if (err) throw err;
+      res.status(200).json({ userDeleted: true }).end();
+    });
   });
 
   router.post(
@@ -94,7 +92,6 @@ module.exports = (db) => {
         "mobile",
         "username",
       ];
-      console.log("hereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
       const users_columns = ["username", "staffId", "roles"];
       let checker = (arr, target) => target.every((v) => arr.includes(v)); //To check if all elements exist
       if (
