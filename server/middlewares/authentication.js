@@ -30,13 +30,19 @@ module.exports = {
             console.log(err);
             return done(null, false, { message: "Incorrect credentials." });
           }
-          bcrypt.compare(password, user ? user.password : "").then((match) => {
-            if (user && match) {
-              const { username, name, roles } = user;
-              return done(null, { username, name, roles });
-            }
-            return done(null, false, { message: "Incorrect credentials." });
-          });
+          if (user.active) {
+            bcrypt
+              .compare(password, user ? user.password : "")
+              .then((match) => {
+                if (user && match) {
+                  const { username, name, roles } = user;
+                  return done(null, { username, name, roles });
+                }
+                return done(null, false, { message: "Incorrect credentials." });
+              });
+          } else {
+            return done(null, false, { message: "Your Account is disabled" });
+          }
         });
       })
     );
