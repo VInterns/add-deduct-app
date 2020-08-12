@@ -77,14 +77,20 @@ export class UsersTable extends React.Component {
       .then((msg) => {
         const { status } = msg;
         status === "Disabled"
-          ? toast.success("Successfully disabled user account", {
-              className: "bg-success font-weight-bold",
-              progressClassName: "progress-bar bg-white",
-            })
-          : toast.success("Successfully re-enabled user account", {
-              className: "bg-success font-weight-bold",
-              progressClassName: "progress-bar bg-white",
-            });
+          ? toast.success(
+              "Successfully disabled user account. Refersh the page to see the update.",
+              {
+                className: "bg-success font-weight-bold",
+                progressClassName: "progress-bar bg-white",
+              }
+            )
+          : toast.success(
+              "Successfully enabled user account. Refersh the page to see the update.",
+              {
+                className: "bg-success font-weight-bold",
+                progressClassName: "progress-bar bg-white",
+              }
+            );
       })
       .catch((err) => {
         toast.error(err, {
