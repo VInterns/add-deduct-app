@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { DELETE_USER } from "../api";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import { TeamTableHeader, NoData } from "../components";
+import { DELETE_USER, UPDATE_USER_STATUS } from "../api";
 import { Table, Pagination, Button } from "semantic-ui-react";
 
 export class UsersTable extends React.Component {
@@ -39,8 +39,8 @@ export class UsersTable extends React.Component {
   }
 
   deleteHandler = (user) => {
-    const API = DELETE_USER + "/" + user;
-    fetch(API, {
+    const DELETE_API_URL = DELETE_USER + "/" + user;
+    fetch(DELETE_API_URL, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -52,6 +52,39 @@ export class UsersTable extends React.Component {
           className: "bg-success font-weight-bold",
           progressClassName: "progress-bar bg-white",
         });
+      })
+      .catch((err) => {
+        toast.error(err, {
+          className: "bg-danger rounded font-weight-bold",
+          progressClassName: "progress-bar bg-white",
+        });
+      });
+  };
+
+  statusHandler = ({ username, active }) => {
+    const CHANGE_STATUS_API_URL = UPDATE_USER_STATUS + "/" + username;
+    console.log(CHANGE_STATUS_API_URL);
+    fetch(CHANGE_STATUS_API_URL, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "PUT",
+      body: JSON.stringify({
+        active: !active,
+      }),
+    })
+      .then((res) => res.json())
+      .then((msg) => {
+        const { status } = msg;
+        status === "Disabled"
+          ? toast.success("Successfully disabled user account", {
+              className: "bg-success font-weight-bold",
+              progressClassName: "progress-bar bg-white",
+            })
+          : toast.success("Successfully re-enabled user account", {
+              className: "bg-success font-weight-bold",
+              progressClassName: "progress-bar bg-white",
+            });
       })
       .catch((err) => {
         toast.error(err, {
@@ -88,12 +121,16 @@ export class UsersTable extends React.Component {
                 return (
                   <Table.Row key={i}>
                     <Table.Cell>{row.username}</Table.Cell>
-                    <Table.Cell>{row.status}</Table.Cell>
                     <Table.Cell>
-                      <Button secondary>
-                        {row.status === "deactivated"
-                          ? "Activate Account"
-                          : "Disable Account"}
+                      {row.active ? "Active" : "Disabled"}
+                    </Table.Cell>
+                    <Table.Cell>
+                      <Button
+                        positive={!row.active}
+                        secondary={row.active}
+                        onClick={() => this.statusHandler(row)}
+                      >
+                        {row.active ? "Disable Account" : "Activate Account"}
                       </Button>
                       <Button
                         negative
