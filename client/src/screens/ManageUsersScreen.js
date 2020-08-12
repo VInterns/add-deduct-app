@@ -27,7 +27,6 @@ export class ManageUsersScreen extends React.Component {
 
   render() {
     const { sysUsers } = this.state;
-    console.log(sysUsers);
     if (sysUsers.length !== 0) {
       let keys = Object.keys(sysUsers[0]);
       keys.push("actions");
