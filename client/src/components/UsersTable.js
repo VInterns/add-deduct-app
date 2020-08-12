@@ -1,8 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { UPDATE_USER_STATUS } from "../api";
+import { DELETE_USER } from "../api";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import { TeamTableHeader, NoData } from "../components";
 import { Table, Pagination, Button } from "semantic-ui-react";
-import { TeamTableHeader, TeamTableBody, NoData } from ".";
 
 export class UsersTable extends React.Component {
   constructor(props) {
@@ -36,6 +38,29 @@ export class UsersTable extends React.Component {
     }
   }
 
+  deleteHandler = (user) => {
+    const API = DELETE_USER + "/" + user;
+    fetch(API, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((msg) => {
+        toast.success("Successfully deleted user", {
+          className: "bg-success font-weight-bold",
+          progressClassName: "progress-bar bg-white",
+        });
+      })
+      .catch((err) => {
+        toast.error(err, {
+          className: "bg-danger rounded font-weight-bold",
+          progressClassName: "progress-bar bg-white",
+        });
+      });
+  };
+
   pagesHandler = (e, { activePage }) => {
     this.setState({ activePage });
   };
@@ -60,7 +85,6 @@ export class UsersTable extends React.Component {
             </Table.Header>
             <Table.Body>
               {dataPerPage.map((row, i) => {
-                console.log(row);
                 return (
                   <Table.Row key={i}>
                     <Table.Cell>{row.username}</Table.Cell>
@@ -71,7 +95,10 @@ export class UsersTable extends React.Component {
                           ? "Activate Account"
                           : "Disable Account"}
                       </Button>
-                      <Button className="mr-5" negative>
+                      <Button
+                        negative
+                        onClick={() => this.deleteHandler(row.username)}
+                      >
                         Delete Account
                       </Button>
                     </Table.Cell>
@@ -91,6 +118,7 @@ export class UsersTable extends React.Component {
               </Table.Row>
             </Table.Footer>
           </Table>
+          <ToastContainer />
         </div>
       );
     }
