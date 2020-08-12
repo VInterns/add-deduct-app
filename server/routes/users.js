@@ -1,13 +1,9 @@
 const bcrypt = require("bcryptjs");
 const express = require("express");
-
-const fs = require("fs");
-
 const {
   ensureLoggedIn,
   ensureHasRole,
 } = require("../middlewares/authentication");
-const { getHtmlBody } = require("../utilities");
 let mailer = require("../services/mail");
 
 module.exports = (db) => {
@@ -25,7 +21,6 @@ module.exports = (db) => {
     );
   });
 
-  let roles = {};
   router.post("/search", ensureLoggedIn, ensureHasRole(["hr"]), function (
     req,
     res
@@ -54,22 +49,25 @@ module.exports = (db) => {
       });
   });
 
-  // TODO: fix api
-  router.post("/status/:username", ensureLoggedIn, (req, res) => {
+  // API: UPDATE ACCOUNT STATUS
+  router.put("/changeStatus/:username", ensureLoggedIn, (req, res) => {
+    const { username } = req.params;
+    const { active } = req.body;
+    const status = !active ? "Disabled" : "Activated";
     db.collection("users").findOneAndUpdate(
-      { username: req.params.username },
-      { $set: { status: req.body.status } },
+      { username: username },
+      { $set: { active: active } },
       (err, doc) => {
         if (err) throw err;
-        res.status(200).json({ statusUpdated: true }).end();
+        res.status(200).json({ status: status }).end();
       }
     );
   });
 
   // API: DELETE USER
   router.delete("/deleteUser/:username", (req, res) => {
-    let user = req.params.username;
-    db.collection("users").deleteOne({ username: user }, (err) => {
+    const { username } = req.params;
+    db.collection("users").deleteOne({ username: username }, (err) => {
       if (err) throw err;
       res.status(200).json({ userDeleted: true }).end();
     });
