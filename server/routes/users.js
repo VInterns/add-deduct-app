@@ -37,32 +37,42 @@ module.exports = (db) => {
   });
 
   // API: RETURN ALL USERS
-  router.get("/listUsers", ensureLoggedIn, (req, res) => {
-    db.collection("users")
-      .find({}, { projection: { password: 0, _id: 0, roles: 0 } })
-      .toArray((err, users) => {
-        if (err) {
-          console.log(err);
-          throw err;
-        }
-        res.status(200).json(users).end();
-      });
-  });
+  router.get(
+    "/listUsers",
+    ensureLoggedIn,
+    ensureHasRole(["ADA_HR"]),
+    (req, res) => {
+      db.collection("users")
+        .find({}, { projection: { password: 0, _id: 0, roles: 0 } })
+        .toArray((err, users) => {
+          if (err) {
+            console.log(err);
+            throw err;
+          }
+          res.status(200).json(users).end();
+        });
+    }
+  );
 
   // API: UPDATE ACCOUNT STATUS
-  router.put("/changeStatus/:username", ensureLoggedIn, (req, res) => {
-    const { username } = req.params;
-    const { active } = req.body;
-    const status = !active ? "Disabled" : "Activated";
-    db.collection("users").findOneAndUpdate(
-      { username: username },
-      { $set: { active: active } },
-      (err, doc) => {
-        if (err) throw err;
-        res.status(200).json({ status: status }).end();
-      }
-    );
-  });
+  router.put(
+    "/changeStatus/:username",
+    ensureLoggedIn,
+    ensureHasRole(["ADA_HR"]),
+    (req, res) => {
+      const { username } = req.params;
+      const { active } = req.body;
+      const status = !active ? "Disabled" : "Activated";
+      db.collection("users").findOneAndUpdate(
+        { username: username },
+        { $set: { active: active } },
+        (err, doc) => {
+          if (err) throw err;
+          res.status(200).json({ status: status }).end();
+        }
+      );
+    }
+  );
 
   // API: DELETE USER
   router.delete("/deleteUser/:username", (req, res) => {
