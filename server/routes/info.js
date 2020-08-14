@@ -1,3 +1,4 @@
+const moment = require("moment");
 const { Router } = require("express");
 
 module.exports = (db) => {
@@ -28,11 +29,9 @@ module.exports = (db) => {
   // setDeadline
   router.post("/setDeadline", (req, res) => {
     const { endDate } = req.body;
-    const startDate = new Date();
-    // startDate = `${startDate.getFullYear()}-${startDate.getMonth()}-${startDate.getDay()}`;
     db.collection("deadlines").insertOne(
       {
-        createdAt: startDate,
+        createdAt: moment().format(),
         deadline: endDate,
       },
       (err, doc) => {
