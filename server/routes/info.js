@@ -48,7 +48,6 @@ module.exports = (db) => {
       const { expired, deadline, _id } = await db
         .collection("deadlines")
         .findOne({ expired: false });
-      console.log(expired);
       return res.json({ status: 200, expired, deadline, _id }).end();
     } else {
       return res.json({ status: 204, response: "Empty Collection" }).end();
