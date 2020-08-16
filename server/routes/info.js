@@ -1,5 +1,6 @@
-const moment = require("moment");
 const { Router } = require("express");
+const { formatDate } = require("../util/index");
+const { ObjectID } = require("mongodb");
 
 module.exports = (db) => {
   const collection = "codes";
@@ -27,21 +28,40 @@ module.exports = (db) => {
   });
 
   // setDeadline
-  router.post("/setDeadline", (req, res) => {
+  router.post("/setDeadline", async (req, res) => {
     const { endDate } = req.body;
-    db.collection("deadlines").insertOne(
-      {
-        createdAt: moment().format(),
-        deadline: endDate,
-      },
-      (err, doc) => {
-        if (err) {
-          res.json({ message: err }).end();
-        }
+    const createdAt = formatDate(Date.now());
+    const deadline = formatDate(endDate);
+    const expired = false;
 
-        res.status(200).json({ message: "Successfully set deadline" }).end();
-      }
-    );
+    const { insertedCount } = await db
+      .collection("deadlines")
+      .insertOne({ createdAt, deadline, expired });
+
+    return res.json({ status: 200, insertedCount }).end();
+  });
+
+  // getDeadline
+  router.get("/getDeadline", async (req, res) => {
+    const empty = (await db.collection("deadlines").countDocuments()) === 0;
+    if (!empty) {
+      const { expired, deadline, _id } = await db
+        .collection("deadlines")
+        .findOne({ expired: false });
+      console.log(expired);
+      return res.json({ status: 200, expired, deadline, _id }).end();
+    } else {
+      return res.json({ status: 204, response: "Empty Collection" }).end();
+    }
+  });
+
+  // deleteDeadline
+  router.delete("/delDeadline/:id", async (req, res) => {
+    const { id } = req.params;
+    const { deletedCount } = await db
+      .collection("deadlines")
+      .deleteOne({ _id: ObjectID(id) });
+    return res.json({ status: 200, deletedCount });
   });
   return router;
 };
